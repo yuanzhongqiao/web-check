@@ -1,1181 +1,1032 @@
-<h1 align="center">Web-Check</h1>
-
-
-<p align="center">
-<img src="https://i.ibb.co/q1gZN2p/web-check-logo.png" width="96" /><br />
-<b><i>Comprehensive, on-demand open source intelligence for any website</i></b>
-<br />
-<b>🌐 <a href="https://web-check.xyz/">web-check.xyz</a></b><br />
-
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 align="center" tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网络检查</font></font></h1><a id="user-content-web-check" class="anchor" aria-label="永久链接：网络检查" href="#web-check"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p align="center" dir="auto">
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/def1f3032b6ec59d11b109c906eb7a512796acbf46da8a7e53a3f1fa19fdcade/68747470733a2f2f692e6962622e636f2f7131675a4e32702f7765622d636865636b2d6c6f676f2e706e67"><img src="https://camo.githubusercontent.com/def1f3032b6ec59d11b109c906eb7a512796acbf46da8a7e53a3f1fa19fdcade/68747470733a2f2f692e6962622e636f2f7131675a4e32702f7765622d636865636b2d6c6f676f2e706e67" width="96" data-canonical-src="https://i.ibb.co/q1gZN2p/web-check-logo.png" style="max-width: 100%;"></a><br>
+<b><i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适用于任何网站的全面、按需开源情报</font></font></i></b>
+<br>
+<b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🌐 </font></font><a href="https://web-check.xyz/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">web-check.xyz</font></font></a></b><br>
 </p>
-
----
-
-#### Contents
-
-- **[About](#about)**
-  - [Screenshot](#screenshot)
-  - [Live Demo](#live-demo)
-  - [Mirror](#mirror)
-  - [Features](#features)
-- **[Usage](#usage)**
-  - [Deployment](#deployment)
-    - [Option#1: Netlify](#deploying---option-1-netlify)
-    - [Option#2: Vercel](#deploying---option-2-vercel)
-    - [Option#3: Docker](#deploying---option-3-docker)
-    - [Option#4: Source](#deploying---option-4-from-source)
-  - [Configuration Options](#configuring)
-  - [Developer Setup](#developing)
-- **[Community](#community)**
-  - [Contributing](#contributing)
-  - [Bugs](#reporting-bugs)
-  - [Support](#supporting)
-- **[License](#license)**
-
----
-
-## About
-Get an insight into the inner-workings of a given website: uncover potential attack vectors, analyse server architecture, view security configurations, and learn what technologies a site is using.
-
-Currently the dashboard will show: IP info, SSL chain, DNS records, cookies, headers, domain info, search crawl rules, page map, server location, redirect ledger, open ports, traceroute, DNS security extensions, site performance, trackers, associated hostnames, carbon footprint. Stay tuned, as I'll add more soon!
-
-The aim is to help you easily understand, optimize and secure your website.
-
-### Screenshot
-
+<hr>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">内容</font></font></h4><a id="user-content-contents" class="anchor" aria-label="永久链接： 内容" href="#contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><strong><a href="#about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关于</font></font></a></strong>
+<ul dir="auto">
+<li><a href="#screenshot"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">截屏</font></font></a></li>
+<li><a href="#live-demo"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">现场演示</font></font></a></li>
+<li><a href="#mirror"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">镜子</font></font></a></li>
+<li><a href="#features"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特征</font></font></a></li>
+</ul>
+</li>
+<li><strong><a href="#usage"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用法</font></font></a></strong>
+<ul dir="auto">
+<li><a href="#deployment"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">部署</font></font></a>
+<ul dir="auto">
+<li><a href="#deploying---option-1-netlify"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项#1：Netlify</font></font></a></li>
+<li><a href="#deploying---option-2-vercel"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项#2：维塞尔</font></font></a></li>
+<li><a href="#deploying---option-3-docker"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项#3：Docker</font></font></a></li>
+<li><a href="#deploying---option-4-from-source"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项#4：来源</font></font></a></li>
+</ul>
+</li>
+<li><a href="#configuring"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">配置选项</font></font></a></li>
+<li><a href="#developing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发者设置</font></font></a></li>
+</ul>
+</li>
+<li><strong><a href="#community"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">社区</font></font></a></strong>
+<ul dir="auto">
+<li><a href="#contributing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></a></li>
+<li><a href="#reporting-bugs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虫子</font></font></a></li>
+<li><a href="#supporting"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持</font></font></a></li>
+</ul>
+</li>
+<li><strong><a href="#license"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></a></strong></li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关于</font></font></h2><a id="user-content-about" class="anchor" aria-label="永久链接：关于" href="#about"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">深入了解给定网站的内部工作原理：发现潜在的攻击媒介、分析服务器架构、查看安全配置并了解网站正在使用哪些技术。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目前仪表板将显示：IP 信息、SSL 链、DNS 记录、cookie、标头、域信息、搜索爬网规则、页面地图、服务器位置、重定向分类帐、开放端口、跟踪路由、DNS 安全扩展、站点性能、跟踪器、关联主机名、碳足迹。</font><font style="vertical-align: inherit;">请继续关注，我很快就会添加更多内容！</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目的是帮助您轻松了解、优化和保护您的网站。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">截屏</font></font></h3><a id="user-content-screenshot" class="anchor" aria-label="永久链接：屏幕截图" href="#screenshot"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <details>
-      <summary>Expand Screenshot</summary>
-
-[![Screenshot](https://raw.githubusercontent.com/Lissy93/web-check/master/.github/screenshots/web-check-screenshot1.png)](https://web-check.as93.net/)
-      
+      <summary><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">展开截图</font></font></summary>
+<p dir="auto"><a href="https://web-check.as93.net/" rel="nofollow"><img src="https://raw.githubusercontent.com/Lissy93/web-check/master/.github/screenshots/web-check-screenshot1.png" alt="Screenshot" style="max-width: 100%;"></a></p>
 </details>
-
-[![Screenshot](https://i.ibb.co/r0jXN6s/web-check.png)](https://github.com/Lissy93/web-check/tree/master/.github/screenshots)
-
-### Live Demo
-A hosted version can be accessed at: **[web-check.as93.net](https://web-check.as93.net)**
-
-### Mirror
-The source for this repo is mirrored to CodeBerg, available at: **[codeberg.org/alicia/web-check](https://codeberg.org/alicia/web-check)**
-
-### Status
-
-
-Build & Deploys: [![Netlify Status](https://api.netlify.com/api/v1/badges/c43453c1-5333-4df7-889b-c1d2b52183c0/deploy-status)](https://app.netlify.com/sites/web-check/deploys)
-[![Vercel Status](https://therealsujitk-vercel-badge.vercel.app/?app=web-check-ten)](https://vercel.com/as93/web-check/)
-[![🐳 Build + Publish Docker Image](https://github.com/Lissy93/web-check/actions/workflows/docker.yml/badge.svg)](https://github.com/Lissy93/web-check/actions/workflows/docker.yml)
-[![🚀 Deploy to AWS](https://github.com/Lissy93/web-check/actions/workflows/deploy-aws.yml/badge.svg)](https://github.com/Lissy93/web-check/actions/workflows/deploy-aws.yml)
-<br />
-Repo Management & Miscellaneous: [![🪞 Mirror to Codeberg](https://github.com/Lissy93/web-check/actions/workflows/mirror.yml/badge.svg)](https://github.com/Lissy93/web-check/actions/workflows/mirror.yml)
-[![💓 Inserts Contributors & Sponsors](https://github.com/Lissy93/web-check/actions/workflows/credits.yml/badge.svg)](https://github.com/Lissy93/web-check/actions/workflows/credits.yml)
-
-
-### Features
-
-<details open>
-<summary><b>Click to expand / collapse section</b></summary>
-
-<sup>**Note** _this list needs updating, many more jobs have been added since..._</sup>
-
-The following section outlines the core features, and briefly explains why this data might be useful for you to know, as well as linking to further resources for learning more.
-
+<p dir="auto"><a href="https://github.com/Lissy93/web-check/tree/master/.github/screenshots"><img src="https://camo.githubusercontent.com/f3eb14d96af250042a5fbddefb537ad76cd118899a673a4b2424b439c0e8498e/68747470733a2f2f692e6962622e636f2f72306a584e36732f7765622d636865636b2e706e67" alt="截屏" data-canonical-src="https://i.ibb.co/r0jXN6s/web-check.png" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">现场演示</font></font></h3><a id="user-content-live-demo" class="anchor" aria-label="永久链接：现场演示" href="#live-demo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可以通过以下网址访问托管版本：</font></font><strong><a href="https://web-check.as93.net" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">web-check.as93.net</font></font></a></strong></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">镜子</font></font></h3><a id="user-content-mirror" class="anchor" aria-label="永久链接： 镜子" href="#mirror"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此存储库的源镜像到 CodeBerg，可在以下位置获取：</font></font><strong><a href="https://codeberg.org/alicia/web-check" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">codeberg.org/alicia/&ZeroWidthSpace;&ZeroWidthSpace;web-check</font></font></a></strong></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">地位</font></font></h3><a id="user-content-status" class="anchor" aria-label="永久链接：状态" href="#status"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建和部署：</font><font style="vertical-align: inherit;">
+回购管理和其他：</font></font><a href="https://app.netlify.com/sites/web-check/deploys" rel="nofollow"><img src="https://camo.githubusercontent.com/9bfdedb3a3f852e4f2c1685399c8467f017992e4e95a446ff060e08e2acb3e02/68747470733a2f2f6170692e6e65746c6966792e636f6d2f6170692f76312f6261646765732f63343334353363312d353333332d346466372d383839622d6331643262353231383363302f6465706c6f792d737461747573" alt="Netlify 状态" data-canonical-src="https://api.netlify.com/api/v1/badges/c43453c1-5333-4df7-889b-c1d2b52183c0/deploy-status" style="max-width: 100%;"></a>
+<a href="https://vercel.com/as93/web-check/" rel="nofollow"><img src="https://camo.githubusercontent.com/58aab5826ab35625db2751eb16d4e6fba9362ac12a890efcfba8cb386e3729ee/68747470733a2f2f7468657265616c73756a69746b2d76657263656c2d62616467652e76657263656c2e6170702f3f6170703d7765622d636865636b2d74656e" alt="维塞尔州" data-canonical-src="https://therealsujitk-vercel-badge.vercel.app/?app=web-check-ten" style="max-width: 100%;"></a>
+<a href="https://github.com/Lissy93/web-check/actions/workflows/docker.yml"><img src="https://github.com/Lissy93/web-check/actions/workflows/docker.yml/badge.svg" alt="🐳 构建 + 发布 Docker 镜像" style="max-width: 100%;"></a>
+<a href="https://github.com/Lissy93/web-check/actions/workflows/deploy-aws.yml"><img src="https://github.com/Lissy93/web-check/actions/workflows/deploy-aws.yml/badge.svg" alt="🚀 部署到 AWS" style="max-width: 100%;"></a>
+<br><font style="vertical-align: inherit;"></font><a href="https://github.com/Lissy93/web-check/actions/workflows/mirror.yml"><img src="https://github.com/Lissy93/web-check/actions/workflows/mirror.yml/badge.svg" alt="🪞 镜像到 Codeberg" style="max-width: 100%;"></a>
+<a href="https://github.com/Lissy93/web-check/actions/workflows/credits.yml"><img src="https://github.com/Lissy93/web-check/actions/workflows/credits.yml/badge.svg" alt="💓 插入贡献者和赞助商" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特征</font></font></h3><a id="user-content-features" class="anchor" aria-label="永久链接：特点" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<details open="">
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">单击展开/折叠部分</font></font></b></summary>
+<p dir="auto"><sup><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请注意，</font></font></strong> <em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此列表需要更新，自此以来已经添加了更多工作...</font></font></em></sup></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下部分概述了核心功能，并简要解释了为什么这些数据可能对您有用，并链接到更多资源以了解更多信息。</font></font></p>
 <details>
-<summary><b>IP Info</b></summary>
-
-###### Description
-An IP address (Internet Protocol address) is a numerical label assigned to each device connected to a network / the internet. The IP associated with a given domain can be found by querying the Domain Name System (DNS) for the domain's A (address) record.
-
-###### Use Cases
-Finding the IP of a given server is the first step to conducting further investigations, as it allows us to probe the server for additional info. Including creating a detailed map of a target's network infrastructure, pinpointing the physical location of a server, identifying the hosting service, and even discovering other domains that are hosted on the same IP address.
-
-###### Useful Links
-- [Understanding IP Addresses](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking)
-- [IP Addresses - Wiki](https://en.wikipedia.org/wiki/IP_address)
-- [RFC-791 Internet Protocol](https://tools.ietf.org/html/rfc791)
-- [whatismyipaddress.com](https://whatismyipaddress.com/)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">知识产权信息</font></font></b></summary>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description" class="anchor" aria-label="Permalink: Description" href="#description"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">An IP address (Internet Protocol address) is a numerical label assigned to each device connected to a network / the internet. The IP associated with a given domain can be found by querying the Domain Name System (DNS) for the domain's A (address) record.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Finding the IP of a given server is the first step to conducting further investigations, as it allows us to probe the server for additional info. Including creating a detailed map of a target's network infrastructure, pinpointing the physical location of a server, identifying the hosting service, and even discovering other domains that are hosted on the same IP address.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" rel="nofollow">Understanding IP Addresses</a></li>
+<li><a href="https://en.wikipedia.org/wiki/IP_address" rel="nofollow">IP Addresses - Wiki</a></li>
+<li><a href="https://tools.ietf.org/html/rfc791" rel="nofollow">RFC-791 Internet Protocol</a></li>
+<li><a href="https://whatismyipaddress.com/" rel="nofollow">whatismyipaddress.com</a></li>
+</ul>
 </details>
 <details>
-<summary><b>SSL Chain</b></summary>
-
-<img width="300" src="https://i.ibb.co/kB7LsV1/wc-ssl.png" align="right" />
-
-###### Description
-SSL certificates are digital certificates that authenticate the identity of a website or server, enable secure encrypted communication (HTTPS), and establish trust between clients and servers. A valid SSL certificate is required for a website to be able to use the HTTPS protocol, and encrypt user + site data in transit. SSL certificates are issued by Certificate Authorities (CAs), which are trusted third parties that verify the identity and legitimacy of the certificate holder.
-
-###### Use Cases
-SSL certificates not only provide the assurance that data transmission to and from the website is secure, but they also provide valuable OSINT data. Information from an SSL certificate can include the issuing authority, the domain name, its validity period, and sometimes even organization details. This can be useful for verifying the authenticity of a website, understanding its security setup, or even for discovering associated subdomains or other services.
-
-###### Useful Links
-- [TLS - Wiki](https://en.wikipedia.org/wiki/Transport_Layer_Security)
-- [What is SSL (via Cloudflare learning)](https://www.cloudflare.com/learning/ssl/what-is-ssl/)
-- [RFC-8446 - TLS](https://tools.ietf.org/html/rfc8446)
-- [SSL Checker](https://www.sslshopper.com/ssl-checker.html)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SSL链</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/79e2c530822bc7ac218ee2422c0c44328f4513112a1d66fe2a7bd32ea5503c6c/68747470733a2f2f692e6962622e636f2f6b42374c7356312f77632d73736c2e706e67"><img width="300" src="https://camo.githubusercontent.com/79e2c530822bc7ac218ee2422c0c44328f4513112a1d66fe2a7bd32ea5503c6c/68747470733a2f2f692e6962622e636f2f6b42374c7356312f77632d73736c2e706e67" align="right" data-canonical-src="https://i.ibb.co/kB7LsV1/wc-ssl.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-1" class="anchor" aria-label="Permalink: Description" href="#description-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">SSL certificates are digital certificates that authenticate the identity of a website or server, enable secure encrypted communication (HTTPS), and establish trust between clients and servers. A valid SSL certificate is required for a website to be able to use the HTTPS protocol, and encrypt user + site data in transit. SSL certificates are issued by Certificate Authorities (CAs), which are trusted third parties that verify the identity and legitimacy of the certificate holder.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-1" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">SSL certificates not only provide the assurance that data transmission to and from the website is secure, but they also provide valuable OSINT data. Information from an SSL certificate can include the issuing authority, the domain name, its validity period, and sometimes even organization details. This can be useful for verifying the authenticity of a website, understanding its security setup, or even for discovering associated subdomains or other services.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-1" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" rel="nofollow">TLS - Wiki</a></li>
+<li><a href="https://www.cloudflare.com/learning/ssl/what-is-ssl/" rel="nofollow">What is SSL (via Cloudflare learning)</a></li>
+<li><a href="https://tools.ietf.org/html/rfc8446" rel="nofollow">RFC-8446 - TLS</a></li>
+<li><a href="https://www.sslshopper.com/ssl-checker.html" rel="nofollow">SSL Checker</a></li>
+</ul>
 </details>
 <details>
-<summary><b>DNS Records</b></summary>
-
-<img width="300" src="https://i.ibb.co/7Q1kMwM/wc-dns.png" align="right" />
-
-###### Description
-This task involves looking up the DNS records associated with a specific domain. DNS is a system that translates human-readable domain names into IP addresses that computers use to communicate. Various types of DNS records exist, including A (address), MX (mail exchange), NS (name server), CNAME (canonical name), and TXT (text), among others.
-
-###### Use Cases
-Extracting DNS records can provide a wealth of information in an OSINT investigation. For example, A and AAAA records can disclose IP addresses associated with a domain, potentially revealing the location of servers. MX records can give clues about a domain's email provider. TXT records are often used for various administrative purposes and can sometimes inadvertently leak internal information. Understanding a domain's DNS setup can also be useful in understanding how its online infrastructure is built and managed.
-
-###### Useful Links
-- [What are DNS records? (via Cloudflare learning)](https://www.cloudflare.com/learning/dns/dns-records/)
-- [DNS Record Types](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
-- [RFC-1035 - DNS](https://tools.ietf.org/html/rfc1035)
-- [DNS Lookup (via MxToolbox)](https://mxtoolbox.com/DNSLookup.aspx)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DNS 记录</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/468d672895a1f0f77db930f9758199c6db315f7123b01ec2043bc21154de81a0/68747470733a2f2f692e6962622e636f2f3751316b4d774d2f77632d646e732e706e67"><img width="300" src="https://camo.githubusercontent.com/468d672895a1f0f77db930f9758199c6db315f7123b01ec2043bc21154de81a0/68747470733a2f2f692e6962622e636f2f3751316b4d774d2f77632d646e732e706e67" align="right" data-canonical-src="https://i.ibb.co/7Q1kMwM/wc-dns.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-2" class="anchor" aria-label="Permalink: Description" href="#description-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This task involves looking up the DNS records associated with a specific domain. DNS is a system that translates human-readable domain names into IP addresses that computers use to communicate. Various types of DNS records exist, including A (address), MX (mail exchange), NS (name server), CNAME (canonical name), and TXT (text), among others.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-2" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Extracting DNS records can provide a wealth of information in an OSINT investigation. For example, A and AAAA records can disclose IP addresses associated with a domain, potentially revealing the location of servers. MX records can give clues about a domain's email provider. TXT records are often used for various administrative purposes and can sometimes inadvertently leak internal information. Understanding a domain's DNS setup can also be useful in understanding how its online infrastructure is built and managed.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-2" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://www.cloudflare.com/learning/dns/dns-records/" rel="nofollow">What are DNS records? (via Cloudflare learning)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types" rel="nofollow">DNS Record Types</a></li>
+<li><a href="https://tools.ietf.org/html/rfc1035" rel="nofollow">RFC-1035 - DNS</a></li>
+<li><a href="https://mxtoolbox.com/DNSLookup.aspx" rel="nofollow">DNS Lookup (via MxToolbox)</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Cookies</b></summary>
-
-<img width="300" src="https://i.ibb.co/TTQ6DtP/wc-cookies.png" align="right" />
-
-###### Description
-The Cookies task involves examining the HTTP cookies set by the target website. Cookies are small pieces of data stored on the user's computer by the web browser while browsing a website. They hold a modest amount of data specific to a particular client and website, such as site preferences, the state of the user's session, or tracking information.
-
-###### Use Cases
-Cookies can disclose information about how the website tracks and interacts with its users. For instance, session cookies can reveal how user sessions are managed, and tracking cookies can hint at what kind of tracking or analytics frameworks are being used. Additionally, examining cookie policies and practices can offer insights into the site's security settings and compliance with privacy regulations.
-
-###### Useful Links
-- [HTTP Cookie Docs (Mozilla)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-- [What are Cookies (via Cloudflare Learning)](https://www.cloudflare.com/learning/privacy/what-are-cookies/)
-- [Testing for Cookie Attributes (OWASP)](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes)
-- [RFC-6265 - Coolies](https://tools.ietf.org/html/rfc6265)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">饼干</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/fa4eb57db3752c3d51f4449f27657e88d825dd0f5e5d83ebe79d0a6b76f41d72/68747470733a2f2f692e6962622e636f2f545451364474502f77632d636f6f6b6965732e706e67"><img width="300" src="https://camo.githubusercontent.com/fa4eb57db3752c3d51f4449f27657e88d825dd0f5e5d83ebe79d0a6b76f41d72/68747470733a2f2f692e6962622e636f2f545451364474502f77632d636f6f6b6965732e706e67" align="right" data-canonical-src="https://i.ibb.co/TTQ6DtP/wc-cookies.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-3" class="anchor" aria-label="Permalink: Description" href="#description-3"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The Cookies task involves examining the HTTP cookies set by the target website. Cookies are small pieces of data stored on the user's computer by the web browser while browsing a website. They hold a modest amount of data specific to a particular client and website, such as site preferences, the state of the user's session, or tracking information.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-3" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-3"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Cookies can disclose information about how the website tracks and interacts with its users. For instance, session cookies can reveal how user sessions are managed, and tracking cookies can hint at what kind of tracking or analytics frameworks are being used. Additionally, examining cookie policies and practices can offer insights into the site's security settings and compliance with privacy regulations.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-3" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-3"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" rel="nofollow">HTTP Cookie Docs (Mozilla)</a></li>
+<li><a href="https://www.cloudflare.com/learning/privacy/what-are-cookies/" rel="nofollow">What are Cookies (via Cloudflare Learning)</a></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes" rel="nofollow">Testing for Cookie Attributes (OWASP)</a></li>
+<li><a href="https://tools.ietf.org/html/rfc6265" rel="nofollow">RFC-6265 - Coolies</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Crawl Rules</b></summary>
-
-<img width="300" src="https://i.ibb.co/KwQCjPf/wc-robots.png" align="right" />
-
-###### Description
-Robots.txt is a file found (usually) at the root of a domain, and is used to implement the Robots Exclusion Protocol (REP) to indicate which pages should be ignored by which crawlers and bots. It's good practice to avoid search engine crawlers from over-loading your site, but should not be used to keep pages out of search results (use the noindex meta tag or header instead).
-
-###### Use Cases
-It's often useful to check the robots.txt file during an investigation, as it can sometimes disclose the directories and pages that the site owner doesn't want to be indexed, potentially because they contain sensitive information, or reveal the existence of otherwise hidden or unlinked directories. Additionally, understanding crawl rules may offer insights into a website's SEO strategies.
-
-###### Useful Links
-- [Google Search Docs - Robots.txt](https://developers.google.com/search/docs/advanced/robots/intro)
-- [Learn about robots.txt (via Moz.com)](https://moz.com/learn/seo/robotstxt)
-- [RFC-9309 -  Robots Exclusion Protocol](https://datatracker.ietf.org/doc/rfc9309/)
-- [Robots.txt - wiki](https://en.wikipedia.org/wiki/Robots_exclusion_standard)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">抓取规则</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/7d16cf277824be1c824cbfe12b309dad9eaf95e9650430ffb9c98923bead95d6/68747470733a2f2f692e6962622e636f2f4b7751436a50662f77632d726f626f74732e706e67"><img width="300" src="https://camo.githubusercontent.com/7d16cf277824be1c824cbfe12b309dad9eaf95e9650430ffb9c98923bead95d6/68747470733a2f2f692e6962622e636f2f4b7751436a50662f77632d726f626f74732e706e67" align="right" data-canonical-src="https://i.ibb.co/KwQCjPf/wc-robots.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-4" class="anchor" aria-label="Permalink: Description" href="#description-4"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Robots.txt is a file found (usually) at the root of a domain, and is used to implement the Robots Exclusion Protocol (REP) to indicate which pages should be ignored by which crawlers and bots. It's good practice to avoid search engine crawlers from over-loading your site, but should not be used to keep pages out of search results (use the noindex meta tag or header instead).</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-4" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-4"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">It's often useful to check the robots.txt file during an investigation, as it can sometimes disclose the directories and pages that the site owner doesn't want to be indexed, potentially because they contain sensitive information, or reveal the existence of otherwise hidden or unlinked directories. Additionally, understanding crawl rules may offer insights into a website's SEO strategies.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-4" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-4"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://developers.google.com/search/docs/advanced/robots/intro" rel="nofollow">Google Search Docs - Robots.txt</a></li>
+<li><a href="https://moz.com/learn/seo/robotstxt" rel="nofollow">Learn about robots.txt (via Moz.com)</a></li>
+<li><a href="https://datatracker.ietf.org/doc/rfc9309/" rel="nofollow">RFC-9309 -  Robots Exclusion Protocol</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Robots_exclusion_standard" rel="nofollow">Robots.txt - wiki</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Headers</b></summary>
-
-<img width="300" src="https://i.ibb.co/t3xcwP1/wc-headers.png" align="right" />
-
-###### Description
-The Headers task involves extracting and interpreting the HTTP headers sent by the target website during the request-response cycle. HTTP headers are key-value pairs sent at the start of an HTTP response, or before the actual data. Headers contain important directives for how to handle the data being transferred, including cache policies, content types, encoding, server information, security policies, and more.
-
-###### Use Cases
-Analyzing HTTP headers can provide significant insights in an OSINT investigation. Headers can reveal specific server configurations, chosen technologies, caching directives, and various security settings. This information can help to determine a website's underlying technology stack, server-side security measures, potential vulnerabilities, and general operational practices.
-
-###### Useful Links
-- [HTTP Headers - Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
-- [RFC-7231 Section 7 - Headers](https://datatracker.ietf.org/doc/html/rfc7231#section-7)
-- [List of header response fields](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
-- [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标头</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/cafbeb72d5b4e8f9377486a45660cda531c51da60059912c9a1f0ac287c3bb19/68747470733a2f2f692e6962622e636f2f743378637750312f77632d686561646572732e706e67"><img width="300" src="https://camo.githubusercontent.com/cafbeb72d5b4e8f9377486a45660cda531c51da60059912c9a1f0ac287c3bb19/68747470733a2f2f692e6962622e636f2f743378637750312f77632d686561646572732e706e67" align="right" data-canonical-src="https://i.ibb.co/t3xcwP1/wc-headers.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-5" class="anchor" aria-label="Permalink: Description" href="#description-5"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The Headers task involves extracting and interpreting the HTTP headers sent by the target website during the request-response cycle. HTTP headers are key-value pairs sent at the start of an HTTP response, or before the actual data. Headers contain important directives for how to handle the data being transferred, including cache policies, content types, encoding, server information, security policies, and more.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-5" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-5"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Analyzing HTTP headers can provide significant insights in an OSINT investigation. Headers can reveal specific server configurations, chosen technologies, caching directives, and various security settings. This information can help to determine a website's underlying technology stack, server-side security measures, potential vulnerabilities, and general operational practices.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-5" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-5"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers" rel="nofollow">HTTP Headers - Docs</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7231#section-7" rel="nofollow">RFC-7231 Section 7 - Headers</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields" rel="nofollow">List of header response fields</a></li>
+<li><a href="https://owasp.org/www-project-secure-headers/" rel="nofollow">OWASP Secure Headers Project</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Quality Metrics</b></summary>
-
-<img width="300" src="https://i.ibb.co/Kqg8rx7/wc-quality.png" align="right" />
-
-###### Description
-Using Lighthouse, the Quality Metrics task measures the performance, accessibility, best practices, and SEO of the target website. This returns a simple checklist of 100 core metrics, along with a score for each category, to gauge the overall quality of a given site.
-
-###### Use Cases
-Useful for assessing a site's technical health, SEO issues, identify vulnerabilities, and ensure compliance with standards.
-
-###### Useful Links
-- [Lighthouse Docs](https://developer.chrome.com/docs/lighthouse/)
-- [Google Page Speed Tools](https://developers.google.com/speed)
-- [W3 Accessibility Tools](https://www.w3.org/WAI/test-evaluate/)
-- [Google Search Console](https://search.google.com/search-console)
-- [SEO Checker](https://www.seobility.net/en/seocheck/)
-- [PWA Builder](https://www.pwabuilder.com/)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">质量指标</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c0810b025ef79645ef528738c624efe0619bddda4a7615f70557636285428c75/68747470733a2f2f692e6962622e636f2f4b7167387278372f77632d7175616c6974792e706e67"><img width="300" src="https://camo.githubusercontent.com/c0810b025ef79645ef528738c624efe0619bddda4a7615f70557636285428c75/68747470733a2f2f692e6962622e636f2f4b7167387278372f77632d7175616c6974792e706e67" align="right" data-canonical-src="https://i.ibb.co/Kqg8rx7/wc-quality.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-6" class="anchor" aria-label="Permalink: Description" href="#description-6"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Using Lighthouse, the Quality Metrics task measures the performance, accessibility, best practices, and SEO of the target website. This returns a simple checklist of 100 core metrics, along with a score for each category, to gauge the overall quality of a given site.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-6" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-6"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Useful for assessing a site's technical health, SEO issues, identify vulnerabilities, and ensure compliance with standards.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-6" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-6"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://developer.chrome.com/docs/lighthouse/" rel="nofollow">Lighthouse Docs</a></li>
+<li><a href="https://developers.google.com/speed" rel="nofollow">Google Page Speed Tools</a></li>
+<li><a href="https://www.w3.org/WAI/test-evaluate/" rel="nofollow">W3 Accessibility Tools</a></li>
+<li><a href="https://search.google.com/search-console" rel="nofollow">Google Search Console</a></li>
+<li><a href="https://www.seobility.net/en/seocheck/" rel="nofollow">SEO Checker</a></li>
+<li><a href="https://www.pwabuilder.com/" rel="nofollow">PWA Builder</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Server Location</b></summary>
-
-<img width="300" src="https://i.ibb.co/cXH2hfR/wc-location.png" align="right" />
-
-###### Description
-The Server Location task determines the physical location of the server hosting a given website based on its IP address. This is done by looking up the IP in a location database, which maps the IP to a lat + long of known data centers and ISPs. From the latitude and longitude, it's then possible to show additional contextual info, like a pin on the map, along with address, flag, time zone, currency, etc.
-
-###### Use Cases
-Knowing the server location is a good first step in better understanding a website. For site owners this aids in optimizing content delivery, ensuring compliance with data residency requirements, and identifying potential latency issues that may impact user experience in specific geographical regions. And for security researcher, assess the risk posed by specific regions or jurisdictions regarding cyber threats and regulations.
-
-###### Useful Links
-- [IP Locator](https://geobytes.com/iplocator/)
-- [Internet Geolocation - Wiki](https://en.wikipedia.org/wiki/Internet_geolocation)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">服务器位置</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/574aeba2cbe50b069c2c916e42be89f074b3a349205f50ea5bfe4cf22be72a7b/68747470733a2f2f692e6962622e636f2f635848326866522f77632d6c6f636174696f6e2e706e67"><img width="300" src="https://camo.githubusercontent.com/574aeba2cbe50b069c2c916e42be89f074b3a349205f50ea5bfe4cf22be72a7b/68747470733a2f2f692e6962622e636f2f635848326866522f77632d6c6f636174696f6e2e706e67" align="right" data-canonical-src="https://i.ibb.co/cXH2hfR/wc-location.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-7" class="anchor" aria-label="Permalink: Description" href="#description-7"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The Server Location task determines the physical location of the server hosting a given website based on its IP address. This is done by looking up the IP in a location database, which maps the IP to a lat + long of known data centers and ISPs. From the latitude and longitude, it's then possible to show additional contextual info, like a pin on the map, along with address, flag, time zone, currency, etc.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-7" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-7"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Knowing the server location is a good first step in better understanding a website. For site owners this aids in optimizing content delivery, ensuring compliance with data residency requirements, and identifying potential latency issues that may impact user experience in specific geographical regions. And for security researcher, assess the risk posed by specific regions or jurisdictions regarding cyber threats and regulations.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-7" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-7"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://geobytes.com/iplocator/" rel="nofollow">IP Locator</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Internet_geolocation" rel="nofollow">Internet Geolocation - Wiki</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Associated Hosts</b></summary>
-
-<img width="300" src="https://i.ibb.co/25j1sT7/wc-hosts.png" align="right" />
-
-###### Description
-This task involves identifying and listing all domains and subdomains (hostnames) that are associated with the website's primary domain. This process often involves DNS enumeration to discover any linked domains and hostnames, as well as looking at known DNS records.
-
-###### Use Cases
-During an investigation, understanding the full scope of a target's web presence is critical. Associated domains could lead to uncovering related projects, backup sites, development/test sites, or services linked to the main site. These can sometimes provide additional information or potential security vulnerabilities. A comprehensive list of associated domains and hostnames can also give an overview of the organization's structure and online footprint.
-
-###### Useful Links
-- [DNS Enumeration - Wiki](https://en.wikipedia.org/wiki/DNS_enumeration)
-- [OWASP - Enumerate Applications on Webserver](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/04-Enumerate_Applications_on_Webserver)
-- [DNS Enumeration - DNS Dumpster](https://dnsdumpster.com/)
-- [Subdomain Finder](https://subdomainfinder.c99.nl/)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关联主机</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a41edb7d08960a0973e96bf620463c8a84a878c7ddcc35e696977667a49c513a/68747470733a2f2f692e6962622e636f2f32356a317354372f77632d686f7374732e706e67"><img width="300" src="https://camo.githubusercontent.com/a41edb7d08960a0973e96bf620463c8a84a878c7ddcc35e696977667a49c513a/68747470733a2f2f692e6962622e636f2f32356a317354372f77632d686f7374732e706e67" align="right" data-canonical-src="https://i.ibb.co/25j1sT7/wc-hosts.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-8" class="anchor" aria-label="Permalink: Description" href="#description-8"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This task involves identifying and listing all domains and subdomains (hostnames) that are associated with the website's primary domain. This process often involves DNS enumeration to discover any linked domains and hostnames, as well as looking at known DNS records.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-8" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-8"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">During an investigation, understanding the full scope of a target's web presence is critical. Associated domains could lead to uncovering related projects, backup sites, development/test sites, or services linked to the main site. These can sometimes provide additional information or potential security vulnerabilities. A comprehensive list of associated domains and hostnames can also give an overview of the organization's structure and online footprint.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-8" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-8"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://en.wikipedia.org/wiki/DNS_enumeration" rel="nofollow">DNS Enumeration - Wiki</a></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/04-Enumerate_Applications_on_Webserver" rel="nofollow">OWASP - Enumerate Applications on Webserver</a></li>
+<li><a href="https://dnsdumpster.com/" rel="nofollow">DNS Enumeration - DNS Dumpster</a></li>
+<li><a href="https://subdomainfinder.c99.nl/" rel="nofollow">Subdomain Finder</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Redirect Chain</b></summary>
-
-<img width="300" src="https://i.ibb.co/hVVrmwh/wc-redirects.png" align="right" />
-
-###### Description
-This task traces the sequence of HTTP redirects that occur from the original URL to the final destination URL. An HTTP redirect is a response with a status code that advises the client to go to another URL. Redirects can occur for several reasons, such as URL normalization (directing to the www version of the site), enforcing HTTPS, URL shorteners, or forwarding users to a new site location.
-
-###### Use Cases
-Understanding the redirect chain can be useful for several reasons. From a security perspective, long or complicated redirect chains can be a sign of potential security risks, such as unencrypted redirects in the chain. Additionally, redirects can impact website performance and SEO, as each redirect introduces additional round-trip-time (RTT). For OSINT, understanding the redirect chain can help identify relationships between different domains or reveal the use of certain technologies or hosting providers.
-
-###### Useful Links
-- [HTTP Redirects - MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
-- [URL Redirection - Wiki](https://en.wikipedia.org/wiki/URL_redirection)
-- [301 Redirects explained](https://ahrefs.com/blog/301-redirects/)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">重定向链</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e78ffa258e85fdade064d6ff6c95d919a35aebab9bd92963a14d53c7e8dc0950/68747470733a2f2f692e6962622e636f2f685656726d77682f77632d7265646972656374732e706e67"><img width="300" src="https://camo.githubusercontent.com/e78ffa258e85fdade064d6ff6c95d919a35aebab9bd92963a14d53c7e8dc0950/68747470733a2f2f692e6962622e636f2f685656726d77682f77632d7265646972656374732e706e67" align="right" data-canonical-src="https://i.ibb.co/hVVrmwh/wc-redirects.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-9" class="anchor" aria-label="Permalink: Description" href="#description-9"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This task traces the sequence of HTTP redirects that occur from the original URL to the final destination URL. An HTTP redirect is a response with a status code that advises the client to go to another URL. Redirects can occur for several reasons, such as URL normalization (directing to the www version of the site), enforcing HTTPS, URL shorteners, or forwarding users to a new site location.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-9" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-9"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Understanding the redirect chain can be useful for several reasons. From a security perspective, long or complicated redirect chains can be a sign of potential security risks, such as unencrypted redirects in the chain. Additionally, redirects can impact website performance and SEO, as each redirect introduces additional round-trip-time (RTT). For OSINT, understanding the redirect chain can help identify relationships between different domains or reveal the use of certain technologies or hosting providers.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-9" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-9"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections" rel="nofollow">HTTP Redirects - MDN</a></li>
+<li><a href="https://en.wikipedia.org/wiki/URL_redirection" rel="nofollow">URL Redirection - Wiki</a></li>
+<li><a href="https://ahrefs.com/blog/301-redirects/" rel="nofollow">301 Redirects explained</a></li>
+</ul>
 </details>
 <details>
-<summary><b>TXT Records</b></summary>
-
-<img width="300" src="https://i.ibb.co/wyt21QN/wc-txt-records.png" align="right" />
-
-###### Description
-TXT records are a type of DNS record that provides text information to sources outside your domain. They can be used for a variety of purposes, such as verifying domain ownership, ensuring email security, and even preventing unauthorized changes to your website.
-
-###### Use Cases
-The TXT records often reveal which external services and technologies are being used with a given domain. They may reveal details about the domain's email configuration, the use of specific services like Google Workspace or Microsoft 365, or security measures in place such as SPF and DKIM. Understanding these details can give an insight into the technologies used by the organization, their email security practices, and potential vulnerabilities.
-
-###### Useful Links
-- [TXT Records (via Cloudflare Learning)](https://www.cloudflare.com/learning/dns/dns-records/dns-txt-record/)
-- [TXT Records - Wiki](https://en.wikipedia.org/wiki/TXT_record)
-- [RFC-1464 - TXT Records](https://datatracker.ietf.org/doc/html/rfc1464)
-- [TXT Record Lookup (via MxToolbox)](https://mxtoolbox.com/TXTLookup.aspx)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TXT 记录</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/55c8ae467248ffda5bf4a713d0c42b09b324e55d7087238a8074c91bd0cac100/68747470733a2f2f692e6962622e636f2f7779743231514e2f77632d7478742d7265636f7264732e706e67"><img width="300" src="https://camo.githubusercontent.com/55c8ae467248ffda5bf4a713d0c42b09b324e55d7087238a8074c91bd0cac100/68747470733a2f2f692e6962622e636f2f7779743231514e2f77632d7478742d7265636f7264732e706e67" align="right" data-canonical-src="https://i.ibb.co/wyt21QN/wc-txt-records.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-10" class="anchor" aria-label="Permalink: Description" href="#description-10"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">TXT records are a type of DNS record that provides text information to sources outside your domain. They can be used for a variety of purposes, such as verifying domain ownership, ensuring email security, and even preventing unauthorized changes to your website.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-10" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-10"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The TXT records often reveal which external services and technologies are being used with a given domain. They may reveal details about the domain's email configuration, the use of specific services like Google Workspace or Microsoft 365, or security measures in place such as SPF and DKIM. Understanding these details can give an insight into the technologies used by the organization, their email security practices, and potential vulnerabilities.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-10" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-10"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://www.cloudflare.com/learning/dns/dns-records/dns-txt-record/" rel="nofollow">TXT Records (via Cloudflare Learning)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/TXT_record" rel="nofollow">TXT Records - Wiki</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc1464" rel="nofollow">RFC-1464 - TXT Records</a></li>
+<li><a href="https://mxtoolbox.com/TXTLookup.aspx" rel="nofollow">TXT Record Lookup (via MxToolbox)</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Server Status</b></summary>
-
-<img width="300" src="https://i.ibb.co/V9CNLBK/wc-status.png" align="right" />
-
-###### Description
-Checks if a server is online and responding to requests.
-
-###### Use Cases
-
-
-###### Useful Links
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">服务器状态</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/1fd316ff4da19218f7576034ff72530bc72e2ce7d272079216aa27e0b42474b9/68747470733a2f2f692e6962622e636f2f5639434e4c424b2f77632d7374617475732e706e67"><img width="300" src="https://camo.githubusercontent.com/1fd316ff4da19218f7576034ff72530bc72e2ce7d272079216aa27e0b42474b9/68747470733a2f2f692e6962622e636f2f5639434e4c424b2f77632d7374617475732e706e67" align="right" data-canonical-src="https://i.ibb.co/V9CNLBK/wc-status.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-11" class="anchor" aria-label="Permalink: Description" href="#description-11"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Checks if a server is online and responding to requests.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-11" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-11"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-11" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-11"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 </details>
 <details>
-<summary><b>Open Ports</b></summary>
-
-<img width="300" src="https://i.ibb.co/F8D1hmf/wc-ports.png" align="right" />
-
-###### Description
-Open ports on a server are endpoints of communication which are available for establishing connections with clients. Each port corresponds to a specific service or protocol, such as HTTP (port 80), HTTPS (port 443), FTP (port 21), etc. The open ports on a server can be determined using techniques such as port scanning.
-
-###### Use Cases
-Knowing which ports are open on a server can provide information about the services running on that server, useful for understanding the potential vulnerabilities of the system, or for understanding the nature of the services the server is providing.
-
-###### Useful Links
-- [List of TCP & UDP Port Numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
-- [NMAP - Port Scanning Basics](https://nmap.org/book/man-port-scanning-basics.html)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开放端口</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ee9e620b2ed07a11f103aa4a507271c570e53721d83fcec19d89357fe8d20d3f/68747470733a2f2f692e6962622e636f2f46384431686d662f77632d706f7274732e706e67"><img width="300" src="https://camo.githubusercontent.com/ee9e620b2ed07a11f103aa4a507271c570e53721d83fcec19d89357fe8d20d3f/68747470733a2f2f692e6962622e636f2f46384431686d662f77632d706f7274732e706e67" align="right" data-canonical-src="https://i.ibb.co/F8D1hmf/wc-ports.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-12" class="anchor" aria-label="Permalink: Description" href="#description-12"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Open ports on a server are endpoints of communication which are available for establishing connections with clients. Each port corresponds to a specific service or protocol, such as HTTP (port 80), HTTPS (port 443), FTP (port 21), etc. The open ports on a server can be determined using techniques such as port scanning.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-12" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-12"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Knowing which ports are open on a server can provide information about the services running on that server, useful for understanding the potential vulnerabilities of the system, or for understanding the nature of the services the server is providing.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-12" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-12"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers" rel="nofollow">List of TCP &amp; UDP Port Numbers</a></li>
+<li><a href="https://nmap.org/book/man-port-scanning-basics.html" rel="nofollow">NMAP - Port Scanning Basics</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Traceroute</b></summary>
-
-<img width="300" src="https://i.ibb.co/M59qgxP/wc-trace-route.png" align="right" />
-
-###### Description
-Traceroute is a network diagnostic tool used to track in real-time the pathway taken by a packet of information from one system to another. It records each hop along the route, providing details about the IPs of routers and the delay at each point.
-
-###### Use Cases
-In OSINT investigations, traceroute can provide insights about the routing paths and geography of the network infrastructure supporting a website or service. This can help to identify network bottlenecks, potential censorship or manipulation of network traffic, and give an overall sense of the network's structure and efficiency. Additionally, the IP addresses collected during the traceroute may provide additional points of inquiry for further OSINT investigation.
-
-###### Useful Links
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">路由追踪</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/d5b7884bd9ef1c23dfc688b9785d66b66ed0c81f73c9cdd95949e862e40a771f/68747470733a2f2f692e6962622e636f2f4d3539716778502f77632d74726163652d726f7574652e706e67"><img width="300" src="https://camo.githubusercontent.com/d5b7884bd9ef1c23dfc688b9785d66b66ed0c81f73c9cdd95949e862e40a771f/68747470733a2f2f692e6962622e636f2f4d3539716778502f77632d74726163652d726f7574652e706e67" align="right" data-canonical-src="https://i.ibb.co/M59qgxP/wc-trace-route.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-13" class="anchor" aria-label="Permalink: Description" href="#description-13"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Traceroute is a network diagnostic tool used to track in real-time the pathway taken by a packet of information from one system to another. It records each hop along the route, providing details about the IPs of routers and the delay at each point.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-13" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-13"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">In OSINT investigations, traceroute can provide insights about the routing paths and geography of the network infrastructure supporting a website or service. This can help to identify network bottlenecks, potential censorship or manipulation of network traffic, and give an overall sense of the network's structure and efficiency. Additionally, the IP addresses collected during the traceroute may provide additional points of inquiry for further OSINT investigation.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-13" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-13"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+</ul>
 </details>
 <details>
-<summary><b>Carbon Footprint</b></summary>
-
-<img width="300" src="https://i.ibb.co/5v6fSyw/Screenshot-from-2023-07-29-19-07-50.png" align="right" />
-
-###### Description
-This task calculates the estimated carbon footprint of a website. It's based on the amount of data being transferred and processed, and the energy usage of the servers that host and deliver the website. The larger the website and the more complex its features, the higher its carbon footprint is likely to be.
-
-###### Use Cases
-From an OSINT perspective, understanding a website's carbon footprint doesn't directly provide insights into its internal workings or the organization behind it. However, it can still be valuable data in broader analyses, especially in contexts where environmental impact is a consideration. For example, it can be useful for activists, researchers, or ethical hackers who are interested in the sustainability of digital infrastructure, and who want to hold organizations accountable for their environmental impact.
-
-###### Useful Links
-- [WebsiteCarbon - Carbon Calculator](https://www.websitecarbon.com/)
-- [The Green Web Foundation](https://www.thegreenwebfoundation.org/)
-- [The Eco Friendly Web Alliance](https://ecofriendlyweb.org/)
-- [Reset.org](https://en.reset.org/)
-- [Your website is killing the planet - via Wired](https://www.wired.co.uk/article/internet-carbon-footprint)
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">碳足迹</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/1d12ad3180a8552a1a8860069789f0546b12ab595ea8d1a42696b9414de435cb/68747470733a2f2f692e6962622e636f2f357636665379772f53637265656e73686f742d66726f6d2d323032332d30372d32392d31392d30372d35302e706e67"><img width="300" src="https://camo.githubusercontent.com/1d12ad3180a8552a1a8860069789f0546b12ab595ea8d1a42696b9414de435cb/68747470733a2f2f692e6962622e636f2f357636665379772f53637265656e73686f742d66726f6d2d323032332d30372d32392d31392d30372d35302e706e67" align="right" data-canonical-src="https://i.ibb.co/5v6fSyw/Screenshot-from-2023-07-29-19-07-50.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-14" class="anchor" aria-label="Permalink: Description" href="#description-14"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This task calculates the estimated carbon footprint of a website. It's based on the amount of data being transferred and processed, and the energy usage of the servers that host and deliver the website. The larger the website and the more complex its features, the higher its carbon footprint is likely to be.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-14" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-14"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">From an OSINT perspective, understanding a website's carbon footprint doesn't directly provide insights into its internal workings or the organization behind it. However, it can still be valuable data in broader analyses, especially in contexts where environmental impact is a consideration. For example, it can be useful for activists, researchers, or ethical hackers who are interested in the sustainability of digital infrastructure, and who want to hold organizations accountable for their environmental impact.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-14" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-14"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://www.websitecarbon.com/" rel="nofollow">WebsiteCarbon - Carbon Calculator</a></li>
+<li><a href="https://www.thegreenwebfoundation.org/" rel="nofollow">The Green Web Foundation</a></li>
+<li><a href="https://ecofriendlyweb.org/" rel="nofollow">The Eco Friendly Web Alliance</a></li>
+<li><a href="https://en.reset.org/" rel="nofollow">Reset.org</a></li>
+<li><a href="https://www.wired.co.uk/article/internet-carbon-footprint" rel="nofollow">Your website is killing the planet - via Wired</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Server Info</b></summary>
-
-<img width="300" src="https://i.ibb.co/Mk1jx32/wc-server.png" align="right" />
-
-###### Description
-This task retrieves various pieces of information about the server hosting the target website. This can include the server type (e.g., Apache, Nginx), the hosting provider, the Autonomous System Number (ASN), and more. The information is usually obtained through a combination of IP address lookups and analysis of HTTP response headers.
-
-###### Use Cases
-In an OSINT context, server information can provide valuable clues about the organization behind a website. For instance, the choice of hosting provider could suggest the geographical region in which the organization operates, while the server type could hint at the technologies used by the organization. The ASN could also be used to find other domains hosted by the same organization.
-
-###### Useful Links
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">服务器信息</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/0b435ed80c363320946b823d39a96dde33a246bb7bea97d314bf17c24ae1165b/68747470733a2f2f692e6962622e636f2f4d6b316a7833322f77632d7365727665722e706e67"><img width="300" src="https://camo.githubusercontent.com/0b435ed80c363320946b823d39a96dde33a246bb7bea97d314bf17c24ae1165b/68747470733a2f2f692e6962622e636f2f4d6b316a7833322f77632d7365727665722e706e67" align="right" data-canonical-src="https://i.ibb.co/Mk1jx32/wc-server.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-15" class="anchor" aria-label="Permalink: Description" href="#description-15"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This task retrieves various pieces of information about the server hosting the target website. This can include the server type (e.g., Apache, Nginx), the hosting provider, the Autonomous System Number (ASN), and more. The information is usually obtained through a combination of IP address lookups and analysis of HTTP response headers.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-15" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-15"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">In an OSINT context, server information can provide valuable clues about the organization behind a website. For instance, the choice of hosting provider could suggest the geographical region in which the organization operates, while the server type could hint at the technologies used by the organization. The ASN could also be used to find other domains hosted by the same organization.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-15" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-15"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+</ul>
 </details>
 <details>
-<summary><b>Whois Lookup</b></summary>
-
-<img width="300" src="https://i.ibb.co/89WLp14/wc-domain.png" align="right" />
-
-###### Description
-This task retrieves Whois records for the target domain. Whois records are a rich source of information, including the name and contact information of the domain registrant, the domain's creation and expiration dates, the domain's nameservers, and more. The information is usually obtained through a query to a Whois database server.
-
-###### Use Cases
-In an OSINT context, Whois records can provide valuable clues about the entity behind a website. They can show when the domain was first registered and when it's set to expire, which could provide insights into the operational timeline of the entity. The contact information, though often redacted or anonymized, can sometimes lead to additional avenues of investigation. The nameservers could also be used to link together multiple domains owned by the same entity.
-
-###### Useful Links
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-
+<summary><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">域名查询</font></font></b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/d61f182ade20e27f33b93d1b11385a27a0353ffeef578f617f2eb70bb6b0c753/68747470733a2f2f692e6962622e636f2f3839574c7031342f77632d646f6d61696e2e706e67"><img width="300" src="https://camo.githubusercontent.com/d61f182ade20e27f33b93d1b11385a27a0353ffeef578f617f2eb70bb6b0c753/68747470733a2f2f692e6962622e636f2f3839574c7031342f77632d646f6d61696e2e706e67" align="right" data-canonical-src="https://i.ibb.co/89WLp14/wc-domain.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-16" class="anchor" aria-label="Permalink: Description" href="#description-16"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This task retrieves Whois records for the target domain. Whois records are a rich source of information, including the name and contact information of the domain registrant, the domain's creation and expiration dates, the domain's nameservers, and more. The information is usually obtained through a query to a Whois database server.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-16" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-16"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">In an OSINT context, Whois records can provide valuable clues about the entity behind a website. They can show when the domain was first registered and when it's set to expire, which could provide insights into the operational timeline of the entity. The contact information, though often redacted or anonymized, can sometimes lead to additional avenues of investigation. The nameservers could also be used to link together multiple domains owned by the same entity.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-16" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-16"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+</ul>
 </details>
 <details>
 <summary><b>Domain Info</b></summary>
-
-<img width="300" src="https://i.ibb.co/89WLp14/wc-domain.png" align="right" />
-
-###### Description
-This task retrieves Whois records for the target domain. Whois records are a rich source of information, including the name and contact information of the domain registrant, the domain's creation and expiration dates, the domain's nameservers, and more. The information is usually obtained through a query to a Whois database server.
-
-###### Use Cases
-In an OSINT context, Whois records can provide valuable clues about the entity behind a website. They can show when the domain was first registered and when it's set to expire, which could provide insights into the operational timeline of the entity. The contact information, though often redacted or anonymized, can sometimes lead to additional avenues of investigation. The nameservers could also be used to link together multiple domains owned by the same entity.
-
-###### Useful Links
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/d61f182ade20e27f33b93d1b11385a27a0353ffeef578f617f2eb70bb6b0c753/68747470733a2f2f692e6962622e636f2f3839574c7031342f77632d646f6d61696e2e706e67"><img width="300" src="https://camo.githubusercontent.com/d61f182ade20e27f33b93d1b11385a27a0353ffeef578f617f2eb70bb6b0c753/68747470733a2f2f692e6962622e636f2f3839574c7031342f77632d646f6d61696e2e706e67" align="right" data-canonical-src="https://i.ibb.co/89WLp14/wc-domain.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-17" class="anchor" aria-label="Permalink: Description" href="#description-17"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This task retrieves Whois records for the target domain. Whois records are a rich source of information, including the name and contact information of the domain registrant, the domain's creation and expiration dates, the domain's nameservers, and more. The information is usually obtained through a query to a Whois database server.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-17" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-17"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">In an OSINT context, Whois records can provide valuable clues about the entity behind a website. They can show when the domain was first registered and when it's set to expire, which could provide insights into the operational timeline of the entity. The contact information, though often redacted or anonymized, can sometimes lead to additional avenues of investigation. The nameservers could also be used to link together multiple domains owned by the same entity.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-17" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-17"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+</ul>
 </details>
 <details>
 <summary><b>DNS Security Extensions</b></summary>
-
-<img width="300" src="https://i.ibb.co/J54zVmQ/wc-dnssec.png" align="right" />
-
-###### Description
-Without DNSSEC, it's possible for MITM attackers to spoof records and lead users to phishing sites. This is because the DNS system includes no built-in methods to verify that the response to the request was not forged, or that any other part of the process wasn’t interrupted by an attacker. The DNS Security Extensions (DNSSEC) secures DNS lookups by signing your DNS records using public keys, so browsers can detect if the response has been tampered with. Another solution to this issue is DoH (DNS over HTTPS) and DoT (DNS over TLD).
-
-###### Use Cases
-DNSSEC information provides insight into an organization's level of cybersecurity maturity and potential vulnerabilities, particularly around DNS spoofing and cache poisoning. If no DNS secururity (DNSSEC, DoH, DoT, etc) is implemented, this may provide an entry point for an attacker.
-
-###### Useful Links
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/0e7c8b73edd49928528f44dfaa2f7a74764664831f4e4c65f122e7da8a6f4742/68747470733a2f2f692e6962622e636f2f4a35347a566d512f77632d646e737365632e706e67"><img width="300" src="https://camo.githubusercontent.com/0e7c8b73edd49928528f44dfaa2f7a74764664831f4e4c65f122e7da8a6f4742/68747470733a2f2f692e6962622e636f2f4a35347a566d512f77632d646e737365632e706e67" align="right" data-canonical-src="https://i.ibb.co/J54zVmQ/wc-dnssec.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-18" class="anchor" aria-label="Permalink: Description" href="#description-18"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Without DNSSEC, it's possible for MITM attackers to spoof records and lead users to phishing sites. This is because the DNS system includes no built-in methods to verify that the response to the request was not forged, or that any other part of the process wasn’t interrupted by an attacker. The DNS Security Extensions (DNSSEC) secures DNS lookups by signing your DNS records using public keys, so browsers can detect if the response has been tampered with. Another solution to this issue is DoH (DNS over HTTPS) and DoT (DNS over TLD).</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-18" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-18"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">DNSSEC information provides insight into an organization's level of cybersecurity maturity and potential vulnerabilities, particularly around DNS spoofing and cache poisoning. If no DNS secururity (DNSSEC, DoH, DoT, etc) is implemented, this may provide an entry point for an attacker.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-18" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-18"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+</ul>
 </details>
 <details>
 <summary><b>Site Features</b></summary>
-
-<img width="300" src="https://i.ibb.co/gP4P6kp/wc-features.png" align="right" />
-
-###### Description
-Checks which core features are present on a site. If a feature as marked as dead, that means it's not being actively used at load time
-
-###### Use Cases
-This is useful to understand what a site is capable of, and what technologies to look for
-
-###### Useful Links
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/068cf01078f1079adba264dd19e9758b80683c0506ee5addb966547f39c62416/68747470733a2f2f692e6962622e636f2f67503450366b702f77632d66656174757265732e706e67"><img width="300" src="https://camo.githubusercontent.com/068cf01078f1079adba264dd19e9758b80683c0506ee5addb966547f39c62416/68747470733a2f2f692e6962622e636f2f67503450366b702f77632d66656174757265732e706e67" align="right" data-canonical-src="https://i.ibb.co/gP4P6kp/wc-features.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-19" class="anchor" aria-label="Permalink: Description" href="#description-19"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Checks which core features are present on a site. If a feature as marked as dead, that means it's not being actively used at load time</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-19" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-19"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This is useful to understand what a site is capable of, and what technologies to look for</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-19" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-19"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 </details>
 <details>
 <summary><b>HTTP Strict Transport Security</b></summary>
-
-<img width="300" src="https://i.ibb.co/k253fq4/Screenshot-from-2023-07-17-20-10-52.png" align="right" />
-
-###### Description
-HTTP Strict Transport Security (HSTS) is a web security policy mechanism that helps protect websites against protocol downgrade attacks and cookie hijacking. A website can be included in the HSTS preload list by conforming to a set of requirements and then submitting itself to the list.
-
-###### Use Cases
-There are several reasons why it's important for a site to be HSTS enabled:
-      1. User bookmarks or manually types http://example.com and is subject to a man-in-the-middle attacker
-        HSTS automatically redirects HTTP requests to HTTPS for the target domain
-      2. Web application that is intended to be purely HTTPS inadvertently contains HTTP links or serves content over HTTP
-        HSTS automatically redirects HTTP requests to HTTPS for the target domain
-      3. A man-in-the-middle attacker attempts to intercept traffic from a victim user using an invalid certificate and hopes the user will accept the bad certificate
-        HSTS does not allow a user to override the invalid certificate message
-        
-
-###### Useful Links
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-- [undefined](function link() { [native code] })
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8d2279b4b299794e130fd6abb57288ab2a721c1b227b51b4e72f5706b034f747/68747470733a2f2f692e6962622e636f2f6b3235336671342f53637265656e73686f742d66726f6d2d323032332d30372d31372d32302d31302d35322e706e67"><img width="300" src="https://camo.githubusercontent.com/8d2279b4b299794e130fd6abb57288ab2a721c1b227b51b4e72f5706b034f747/68747470733a2f2f692e6962622e636f2f6b3235336671342f53637265656e73686f742d66726f6d2d323032332d30372d31372d32302d31302d35322e706e67" align="right" data-canonical-src="https://i.ibb.co/k253fq4/Screenshot-from-2023-07-17-20-10-52.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-20" class="anchor" aria-label="Permalink: Description" href="#description-20"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">HTTP Strict Transport Security (HSTS) is a web security policy mechanism that helps protect websites against protocol downgrade attacks and cookie hijacking. A website can be included in the HSTS preload list by conforming to a set of requirements and then submitting itself to the list.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-20" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-20"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">There are several reasons why it's important for a site to be HSTS enabled:
+1. User bookmarks or manually types <a href="http://example.com" rel="nofollow">http://example.com</a> and is subject to a man-in-the-middle attacker
+HSTS automatically redirects HTTP requests to HTTPS for the target domain
+2. Web application that is intended to be purely HTTPS inadvertently contains HTTP links or serves content over HTTP
+HSTS automatically redirects HTTP requests to HTTPS for the target domain
+3. A man-in-the-middle attacker attempts to intercept traffic from a victim user using an invalid certificate and hopes the user will accept the bad certificate
+HSTS does not allow a user to override the invalid certificate message</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-20" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-20"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+<li>[undefined](function link() { [native code] })</li>
+</ul>
 </details>
 <details>
 <summary><b>DNS Server</b></summary>
-
-<img width="300" src="https://i.ibb.co/tKpL8F9/Screenshot-from-2023-08-12-15-43-12.png" align="right" />
-
-###### Description
-This check determines the DNS server(s) that the requested URL / IP resolves to. Also fires off a rudimentary check to see if the DNS server supports DoH, and weather it's vulnerable to DNS cache poisoning.
-
-###### Use Cases
-
-
-###### Useful Links
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/b00305ad7176a09e5f38454204c9c6689b15c911b85c442c73d49d79fee9f286/68747470733a2f2f692e6962622e636f2f744b704c3846392f53637265656e73686f742d66726f6d2d323032332d30382d31322d31352d34332d31322e706e67"><img width="300" src="https://camo.githubusercontent.com/b00305ad7176a09e5f38454204c9c6689b15c911b85c442c73d49d79fee9f286/68747470733a2f2f692e6962622e636f2f744b704c3846392f53637265656e73686f742d66726f6d2d323032332d30382d31322d31352d34332d31322e706e67" align="right" data-canonical-src="https://i.ibb.co/tKpL8F9/Screenshot-from-2023-08-12-15-43-12.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-21" class="anchor" aria-label="Permalink: Description" href="#description-21"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This check determines the DNS server(s) that the requested URL / IP resolves to. Also fires off a rudimentary check to see if the DNS server supports DoH, and weather it's vulnerable to DNS cache poisoning.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-21" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-21"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-21" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-21"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 </details>
 <details>
 <summary><b>Tech Stack</b></summary>
-
-<img width="300" src="https://i.ibb.co/bBQSQNz/Screenshot-from-2023-08-12-15-43-46.png" align="right" />
-
-###### Description
-Checks what technologies a site is built with. This is done by fetching and parsing the site, then comparing it against a bit list of RegEx maintained by Wappalyzer to identify the unique fingerprints that different technologies leave.
-
-###### Use Cases
-Identifying a website's tech stack aids in evaluating its security by exposing potential vulnerabilities, informs competitive analyses and development decisions, and can guide tailored marketing strategies. Ethical application of this knowledge is crucial to avoid harmful activities like data theft or unauthorized intrusion.
-
-###### Useful Links
-- [Wappalyzer fingerprints](https://github.com/wappalyzer/wappalyzer/tree/master/src/technologies)
-- [BuiltWith - Check what tech a site is using](https://builtwith.com/)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/0e9332b90149159a24df45451c4a6ae39babf05ba137c666c259e0e042b14cae/68747470733a2f2f692e6962622e636f2f62425153514e7a2f53637265656e73686f742d66726f6d2d323032332d30382d31322d31352d34332d34362e706e67"><img width="300" src="https://camo.githubusercontent.com/0e9332b90149159a24df45451c4a6ae39babf05ba137c666c259e0e042b14cae/68747470733a2f2f692e6962622e636f2f62425153514e7a2f53637265656e73686f742d66726f6d2d323032332d30382d31322d31352d34332d34362e706e67" align="right" data-canonical-src="https://i.ibb.co/bBQSQNz/Screenshot-from-2023-08-12-15-43-46.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-22" class="anchor" aria-label="Permalink: Description" href="#description-22"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Checks what technologies a site is built with. This is done by fetching and parsing the site, then comparing it against a bit list of RegEx maintained by Wappalyzer to identify the unique fingerprints that different technologies leave.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-22" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-22"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Identifying a website's tech stack aids in evaluating its security by exposing potential vulnerabilities, informs competitive analyses and development decisions, and can guide tailored marketing strategies. Ethical application of this knowledge is crucial to avoid harmful activities like data theft or unauthorized intrusion.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-22" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-22"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://github.com/wappalyzer/wappalyzer/tree/master/src/technologies">Wappalyzer fingerprints</a></li>
+<li><a href="https://builtwith.com/" rel="nofollow">BuiltWith - Check what tech a site is using</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Listed Pages</b></summary>
-
-<img width="300" src="https://i.ibb.co/GtrCQYq/Screenshot-from-2023-07-21-12-28-38.png" align="right" />
-
-###### Description
-This job finds and parses a site's listed sitemap. This file lists public sub-pages on the site, which the author wishes to be crawled by search engines. Sitemaps help with SEO, but are also useful for seeing all a sites public content at a glance.
-
-###### Use Cases
-Understand the structure of a site's public-facing content, and for site-owners, check that you're site's sitemap is accessible, parsable and contains everything you wish it to.
-
-###### Useful Links
-- [Learn about Sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)
-- [Sitemap XML spec](https://www.sitemaps.org/protocol.html)
-- [Sitemap tutorial](https://www.conductor.com/academy/xml-sitemap/)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c529fe86d59cd301f761cb4d1a993dd4eda05995f1deac82a8f5f77c585c77fe/68747470733a2f2f692e6962622e636f2f477472435159712f53637265656e73686f742d66726f6d2d323032332d30372d32312d31322d32382d33382e706e67"><img width="300" src="https://camo.githubusercontent.com/c529fe86d59cd301f761cb4d1a993dd4eda05995f1deac82a8f5f77c585c77fe/68747470733a2f2f692e6962622e636f2f477472435159712f53637265656e73686f742d66726f6d2d323032332d30372d32312d31322d32382d33382e706e67" align="right" data-canonical-src="https://i.ibb.co/GtrCQYq/Screenshot-from-2023-07-21-12-28-38.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-23" class="anchor" aria-label="Permalink: Description" href="#description-23"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This job finds and parses a site's listed sitemap. This file lists public sub-pages on the site, which the author wishes to be crawled by search engines. Sitemaps help with SEO, but are also useful for seeing all a sites public content at a glance.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-23" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-23"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Understand the structure of a site's public-facing content, and for site-owners, check that you're site's sitemap is accessible, parsable and contains everything you wish it to.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-23" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-23"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview" rel="nofollow">Learn about Sitemaps</a></li>
+<li><a href="https://www.sitemaps.org/protocol.html" rel="nofollow">Sitemap XML spec</a></li>
+<li><a href="https://www.conductor.com/academy/xml-sitemap/" rel="nofollow">Sitemap tutorial</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Security.txt</b></summary>
-
-<img width="300" src="https://i.ibb.co/tq1FT5r/Screenshot-from-2023-07-24-20-31-21.png" align="right" />
-
-###### Description
-The security.txt file tells researchers how they can responsibly disclose any security issues found on your site. The standard was proposed in RFC 9116, and specifies that this file should include a point of contact (email address), as well as optionally other info, like a link to the security disclosure policy, PGP key, proffered language, policy expiry and more. The file should be located at the root of your domain, either at /security.txt or /.well-known/security.txt.
-
-###### Use Cases
-This is important, as without a defined point of contact a security researcher may be unable to report a critical security issue, or may use insecure or possibly public channels to do so. From an OSINT perspective, you may also glean info about a site including their posture on security, their CSAF provider, and meta data from the PGP public key.
-
-###### Useful Links
-- [securitytxt.org](https://securitytxt.org/)
-- [RFC-9116 Proposal](https://datatracker.ietf.org/doc/html/rfc9116)
-- [RFC-9116 History](https://datatracker.ietf.org/doc/rfc9116/)
-- [Security.txt (Wikipedia)](https://en.wikipedia.org/wiki/Security.txt)
-- [Example security.txt (Cloudflare)](https://www.cloudflare.com/.well-known/security.txt)
-- [Tutorial for creating security.txt (Pieter Bakker)](https://pieterbakker.com/implementing-security-txt/)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/67a245798ff435b150f006b287e273cc9185bd2cf8d02399e0573130458cbaca/68747470733a2f2f692e6962622e636f2f747131465435722f53637265656e73686f742d66726f6d2d323032332d30372d32342d32302d33312d32312e706e67"><img width="300" src="https://camo.githubusercontent.com/67a245798ff435b150f006b287e273cc9185bd2cf8d02399e0573130458cbaca/68747470733a2f2f692e6962622e636f2f747131465435722f53637265656e73686f742d66726f6d2d323032332d30372d32342d32302d33312d32312e706e67" align="right" data-canonical-src="https://i.ibb.co/tq1FT5r/Screenshot-from-2023-07-24-20-31-21.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-24" class="anchor" aria-label="Permalink: Description" href="#description-24"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The security.txt file tells researchers how they can responsibly disclose any security issues found on your site. The standard was proposed in RFC 9116, and specifies that this file should include a point of contact (email address), as well as optionally other info, like a link to the security disclosure policy, PGP key, proffered language, policy expiry and more. The file should be located at the root of your domain, either at /security.txt or /.well-known/security.txt.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-24" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-24"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This is important, as without a defined point of contact a security researcher may be unable to report a critical security issue, or may use insecure or possibly public channels to do so. From an OSINT perspective, you may also glean info about a site including their posture on security, their CSAF provider, and meta data from the PGP public key.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-24" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-24"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://securitytxt.org/" rel="nofollow">securitytxt.org</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc9116" rel="nofollow">RFC-9116 Proposal</a></li>
+<li><a href="https://datatracker.ietf.org/doc/rfc9116/" rel="nofollow">RFC-9116 History</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Security.txt" rel="nofollow">Security.txt (Wikipedia)</a></li>
+<li><a href="https://www.cloudflare.com/.well-known/security.txt" rel="nofollow">Example security.txt (Cloudflare)</a></li>
+<li><a href="https://pieterbakker.com/implementing-security-txt/" rel="nofollow">Tutorial for creating security.txt (Pieter Bakker)</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Linked Pages</b></summary>
-
-<img width="300" src="https://i.ibb.co/LtK14XR/Screenshot-from-2023-07-29-11-16-44.png" align="right" />
-
-###### Description
-Displays all internal and external links found on a site, identified by the href attributes attached to anchor elements.
-
-###### Use Cases
-For site owners, this is useful for diagnosing SEO issues, improving the site structure, understanding how content is inter-connected. External links can show partnerships, dependencies, and potential reputation risks. From a security standpoint, the outbound links can help identify any potential malicious or compromised sites the website is unknowingly linking to. Analyzing internal links can aid in understanding the site's structure and potentially uncover hidden or vulnerable pages which are not intended to be public. And for an OSINT investigator, it can aid in building a comprehensive understanding of the target, uncovering related entities, resources, or even potential hidden parts of the site.
-
-###### Useful Links
-- [W3C Link Checker](https://validator.w3.org/checklink)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/fd64dc9ecf8bb484689286d27472d3a46a1e96227e3bdaa93f55f596aba65d46/68747470733a2f2f692e6962622e636f2f4c744b313458522f53637265656e73686f742d66726f6d2d323032332d30372d32392d31312d31362d34342e706e67"><img width="300" src="https://camo.githubusercontent.com/fd64dc9ecf8bb484689286d27472d3a46a1e96227e3bdaa93f55f596aba65d46/68747470733a2f2f692e6962622e636f2f4c744b313458522f53637265656e73686f742d66726f6d2d323032332d30372d32392d31312d31362d34342e706e67" align="right" data-canonical-src="https://i.ibb.co/LtK14XR/Screenshot-from-2023-07-29-11-16-44.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-25" class="anchor" aria-label="Permalink: Description" href="#description-25"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Displays all internal and external links found on a site, identified by the href attributes attached to anchor elements.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-25" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-25"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">For site owners, this is useful for diagnosing SEO issues, improving the site structure, understanding how content is inter-connected. External links can show partnerships, dependencies, and potential reputation risks. From a security standpoint, the outbound links can help identify any potential malicious or compromised sites the website is unknowingly linking to. Analyzing internal links can aid in understanding the site's structure and potentially uncover hidden or vulnerable pages which are not intended to be public. And for an OSINT investigator, it can aid in building a comprehensive understanding of the target, uncovering related entities, resources, or even potential hidden parts of the site.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-25" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-25"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://validator.w3.org/checklink" rel="nofollow">W3C Link Checker</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Social Tags</b></summary>
-
-<img width="300" src="https://i.ibb.co/4srTT1w/Screenshot-from-2023-07-29-11-15-27.png" align="right" />
-
-###### Description
-Websites can include certain meta tags, that tell search engines and social media platforms what info to display. This usually includes a title, description, thumbnail, keywords, author, social accounts, etc.
-
-###### Use Cases
-Adding this data to your site will boost SEO, and as an OSINT researcher it can be useful to understand how a given web app describes itself
-
-###### Useful Links
-- [SocialSharePreview.com](https://socialsharepreview.com/)
-- [The guide to social meta tags](https://css-tricks.com/essential-meta-tags-social-media/)
-- [Web.dev metadata tags](https://web.dev/learn/html/metadata/)
-- [Open Graph Protocol](https://ogp.me/)
-- [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards)
-- [Facebook Open Graph](https://developers.facebook.com/docs/sharing/webmasters)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a67ee128756517b9fadb5b4e40a9b59a3b8756e3d0059ab0d5ae4cbe2144500d/68747470733a2f2f692e6962622e636f2f347372545431772f53637265656e73686f742d66726f6d2d323032332d30372d32392d31312d31352d32372e706e67"><img width="300" src="https://camo.githubusercontent.com/a67ee128756517b9fadb5b4e40a9b59a3b8756e3d0059ab0d5ae4cbe2144500d/68747470733a2f2f692e6962622e636f2f347372545431772f53637265656e73686f742d66726f6d2d323032332d30372d32392d31312d31352d32372e706e67" align="right" data-canonical-src="https://i.ibb.co/4srTT1w/Screenshot-from-2023-07-29-11-15-27.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-26" class="anchor" aria-label="Permalink: Description" href="#description-26"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Websites can include certain meta tags, that tell search engines and social media platforms what info to display. This usually includes a title, description, thumbnail, keywords, author, social accounts, etc.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-26" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-26"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Adding this data to your site will boost SEO, and as an OSINT researcher it can be useful to understand how a given web app describes itself</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-26" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-26"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://socialsharepreview.com/" rel="nofollow">SocialSharePreview.com</a></li>
+<li><a href="https://css-tricks.com/essential-meta-tags-social-media/" rel="nofollow">The guide to social meta tags</a></li>
+<li><a href="https://web.dev/learn/html/metadata/" rel="nofollow">Web.dev metadata tags</a></li>
+<li><a href="https://ogp.me/" rel="nofollow">Open Graph Protocol</a></li>
+<li><a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards" rel="nofollow">Twitter Cards</a></li>
+<li><a href="https://developers.facebook.com/docs/sharing/webmasters" rel="nofollow">Facebook Open Graph</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Email Configuration</b></summary>
-
-<img width="300" src="https://i.ibb.co/yqhwx5G/Screenshot-from-2023-07-29-18-22-20.png" align="right" />
-
-###### Description
-DMARC (Domain-based Message Authentication, Reporting & Conformance): DMARC is an email authentication protocol that works with SPF and DKIM to prevent email spoofing and phishing. It allows domain owners to specify how to handle unauthenticated mail via a published policy in DNS, and provides a way for receiving mail servers to send feedback about emails' compliance to the sender. BIMI (Brand Indicators for Message Identification): BIMI is an emerging email standard that enables organizations to display a logo in their customers' email clients automatically. BIMI ties the logo to the domain's DMARC record, providing another level of visual assurance to recipients that the email is legitimate. DKIM (DomainKeys Identified Mail): DKIM is an email security standard designed to make sure that messages were not altered in transit between the sending and recipient servers. It uses digital signatures linked to the domain of the sender to verify the sender and ensure message integrity. SPF (Sender Policy Framework): SPF is an email authentication method designed to prevent email spoofing. It specifies which mail servers are authorized to send email on behalf of a domain by creating a DNS record. This helps protect against spam by providing a way for receiving mail servers to check that incoming mail from a domain comes from a host authorized by that domain's administrators.
-
-###### Use Cases
-This information is helpful for researchers as it helps assess a domain's email security posture, uncover potential vulnerabilities, and verify the legitimacy of emails for phishing detection. These details can also provide insight into the hosting environment, potential service providers, and the configuration patterns of a target organization, assisting in investigative efforts.
-
-###### Useful Links
-- [Intro to DMARC, DKIM, and SPF (via Cloudflare)](https://www.cloudflare.com/learning/email-security/dmarc-dkim-spf/)
-- [EasyDMARC Domain Scanner](https://easydmarc.com/tools/domain-scanner)
-- [MX Toolbox](https://mxtoolbox.com/)
-- [RFC-7208 - SPF](https://datatracker.ietf.org/doc/html/rfc7208)
-- [RFC-6376 - DKIM](https://datatracker.ietf.org/doc/html/rfc6376)
-- [RFC-7489 - DMARC](https://datatracker.ietf.org/doc/html/rfc7489)
-- [BIMI Group](https://bimigroup.org/)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/bfb09cc73a09d89cfcc13c52d50aed922e0f6eb63a73c9ee9888eb8c2e12115b/68747470733a2f2f692e6962622e636f2f797168777835472f53637265656e73686f742d66726f6d2d323032332d30372d32392d31382d32322d32302e706e67"><img width="300" src="https://camo.githubusercontent.com/bfb09cc73a09d89cfcc13c52d50aed922e0f6eb63a73c9ee9888eb8c2e12115b/68747470733a2f2f692e6962622e636f2f797168777835472f53637265656e73686f742d66726f6d2d323032332d30372d32392d31382d32322d32302e706e67" align="right" data-canonical-src="https://i.ibb.co/yqhwx5G/Screenshot-from-2023-07-29-18-22-20.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-27" class="anchor" aria-label="Permalink: Description" href="#description-27"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">DMARC (Domain-based Message Authentication, Reporting &amp; Conformance): DMARC is an email authentication protocol that works with SPF and DKIM to prevent email spoofing and phishing. It allows domain owners to specify how to handle unauthenticated mail via a published policy in DNS, and provides a way for receiving mail servers to send feedback about emails' compliance to the sender. BIMI (Brand Indicators for Message Identification): BIMI is an emerging email standard that enables organizations to display a logo in their customers' email clients automatically. BIMI ties the logo to the domain's DMARC record, providing another level of visual assurance to recipients that the email is legitimate. DKIM (DomainKeys Identified Mail): DKIM is an email security standard designed to make sure that messages were not altered in transit between the sending and recipient servers. It uses digital signatures linked to the domain of the sender to verify the sender and ensure message integrity. SPF (Sender Policy Framework): SPF is an email authentication method designed to prevent email spoofing. It specifies which mail servers are authorized to send email on behalf of a domain by creating a DNS record. This helps protect against spam by providing a way for receiving mail servers to check that incoming mail from a domain comes from a host authorized by that domain's administrators.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-27" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-27"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This information is helpful for researchers as it helps assess a domain's email security posture, uncover potential vulnerabilities, and verify the legitimacy of emails for phishing detection. These details can also provide insight into the hosting environment, potential service providers, and the configuration patterns of a target organization, assisting in investigative efforts.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-27" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-27"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://www.cloudflare.com/learning/email-security/dmarc-dkim-spf/" rel="nofollow">Intro to DMARC, DKIM, and SPF (via Cloudflare)</a></li>
+<li><a href="https://easydmarc.com/tools/domain-scanner" rel="nofollow">EasyDMARC Domain Scanner</a></li>
+<li><a href="https://mxtoolbox.com/" rel="nofollow">MX Toolbox</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7208" rel="nofollow">RFC-7208 - SPF</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc6376" rel="nofollow">RFC-6376 - DKIM</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7489" rel="nofollow">RFC-7489 - DMARC</a></li>
+<li><a href="https://bimigroup.org/" rel="nofollow">BIMI Group</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Firewall Detection</b></summary>
-
-<img width="300" src="https://i.ibb.co/MfcxQt2/Screenshot-from-2023-08-12-15-40-52.png" align="right" />
-
-###### Description
-A WAF or web application firewall helps protect web applications by filtering and monitoring HTTP traffic between a web application and the Internet. It typically protects web applications from attacks such as cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection, among others.
-
-###### Use Cases
-It's useful to understand if a site is using a WAF, and which firewall software / service it is using, as this provides an insight into the sites protection against several attack vectors, but also may reveal vulnerabilities in the firewall itself.
-
-###### Useful Links
-- [What is a WAF (via Cloudflare Learning)](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)
-- [OWASP - Web Application Firewalls](https://owasp.org/www-community/Web_Application_Firewall)
-- [Web Application Firewall Best Practices](https://owasp.org/www-pdf-archive/Best_Practices_Guide_WAF_v104.en.pdf)
-- [WAF - Wiki](https://en.wikipedia.org/wiki/Web_application_firewall)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/0c0ce8fa36dd384a79a4f7bb6a1b0310036753d71245e4edc72f6a564a14ba30/68747470733a2f2f692e6962622e636f2f4d6663785174322f53637265656e73686f742d66726f6d2d323032332d30382d31322d31352d34302d35322e706e67"><img width="300" src="https://camo.githubusercontent.com/0c0ce8fa36dd384a79a4f7bb6a1b0310036753d71245e4edc72f6a564a14ba30/68747470733a2f2f692e6962622e636f2f4d6663785174322f53637265656e73686f742d66726f6d2d323032332d30382d31322d31352d34302d35322e706e67" align="right" data-canonical-src="https://i.ibb.co/MfcxQt2/Screenshot-from-2023-08-12-15-40-52.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-28" class="anchor" aria-label="Permalink: Description" href="#description-28"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">A WAF or web application firewall helps protect web applications by filtering and monitoring HTTP traffic between a web application and the Internet. It typically protects web applications from attacks such as cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection, among others.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-28" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-28"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">It's useful to understand if a site is using a WAF, and which firewall software / service it is using, as this provides an insight into the sites protection against several attack vectors, but also may reveal vulnerabilities in the firewall itself.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-28" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-28"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/" rel="nofollow">What is a WAF (via Cloudflare Learning)</a></li>
+<li><a href="https://owasp.org/www-community/Web_Application_Firewall" rel="nofollow">OWASP - Web Application Firewalls</a></li>
+<li><a href="https://owasp.org/www-pdf-archive/Best_Practices_Guide_WAF_v104.en.pdf" rel="nofollow">Web Application Firewall Best Practices</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Web_application_firewall" rel="nofollow">WAF - Wiki</a></li>
+</ul>
 </details>
 <details>
 <summary><b>HTTP Security Features</b></summary>
-
-<img width="300" src="https://i.ibb.co/LP05HMV/Screenshot-from-2023-08-12-15-40-28.png" align="right" />
-
-###### Description
-Correctly configured security HTTP headers adds a layer of protection against common attacks to your site. The main headers to be aware of are: HTTP Strict Transport Security (HSTS): Enforces the use of HTTPS, mitigating man-in-the-middle attacks and protocol downgrade attempts. Content Security Policy (CSP): Constrains web page resources to prevent cross-site scripting and data injection attacks. X-Content-Type-Options: Prevents browsers from MIME-sniffing a response away from the declared content type, curbing MIME-type confusion attacks. X-Frame-Options: Protects users from clickjacking attacks by controlling whether a browser should render the page in a `<frame>`, `<iframe>`, `<embed>`, or `<object>`. 
-
-###### Use Cases
-Reviewing security headers is important, as it offers insights into a site's defensive posture and potential vulnerabilities, enabling proactive mitigation and ensuring compliance with security best practices.
-
-###### Useful Links
-- [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/)
-- [HTTP Header Cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html)
-- [content-security-policy.com](https://content-security-policy.com/)
-- [resourcepolicy.fyi](https://resourcepolicy.fyi/)
-- [HTTP Security Headers](https://securityheaders.com/)
-- [Mozilla Observatory](https://observatory.mozilla.org/)
-- [CSP Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
-- [HSTS Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
-- [X-Content-Type-Options Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
-- [X-Frame-Options Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
-- [X-XSS-Protection Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/d67cf6c3cf9e710c07a63e08e7b92b95f0d8c73ec76d6c8a599ce831f3552e8f/68747470733a2f2f692e6962622e636f2f4c503035484d562f53637265656e73686f742d66726f6d2d323032332d30382d31322d31352d34302d32382e706e67"><img width="300" src="https://camo.githubusercontent.com/d67cf6c3cf9e710c07a63e08e7b92b95f0d8c73ec76d6c8a599ce831f3552e8f/68747470733a2f2f692e6962622e636f2f4c503035484d562f53637265656e73686f742d66726f6d2d323032332d30382d31322d31352d34302d32382e706e67" align="right" data-canonical-src="https://i.ibb.co/LP05HMV/Screenshot-from-2023-08-12-15-40-28.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-29" class="anchor" aria-label="Permalink: Description" href="#description-29"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Correctly configured security HTTP headers adds a layer of protection against common attacks to your site. The main headers to be aware of are: HTTP Strict Transport Security (HSTS): Enforces the use of HTTPS, mitigating man-in-the-middle attacks and protocol downgrade attempts. Content Security Policy (CSP): Constrains web page resources to prevent cross-site scripting and data injection attacks. X-Content-Type-Options: Prevents browsers from MIME-sniffing a response away from the declared content type, curbing MIME-type confusion attacks. X-Frame-Options: Protects users from clickjacking attacks by controlling whether a browser should render the page in a <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code>, or <code>&lt;object&gt;</code>.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-29" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-29"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Reviewing security headers is important, as it offers insights into a site's defensive posture and potential vulnerabilities, enabling proactive mitigation and ensuring compliance with security best practices.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-29" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-29"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://owasp.org/www-project-secure-headers/" rel="nofollow">OWASP Secure Headers Project</a></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html" rel="nofollow">HTTP Header Cheatsheet</a></li>
+<li><a href="https://content-security-policy.com/" rel="nofollow">content-security-policy.com</a></li>
+<li><a href="https://resourcepolicy.fyi/" rel="nofollow">resourcepolicy.fyi</a></li>
+<li><a href="https://securityheaders.com/" rel="nofollow">HTTP Security Headers</a></li>
+<li><a href="https://observatory.mozilla.org/" rel="nofollow">Mozilla Observatory</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" rel="nofollow">CSP Docs</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security" rel="nofollow">HSTS Docs</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options" rel="nofollow">X-Content-Type-Options Docs</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options" rel="nofollow">X-Frame-Options Docs</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection" rel="nofollow">X-XSS-Protection Docs</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Archive History</b></summary>
-
-<img width="300" src="https://i.ibb.co/nB9szT1/Screenshot-from-2023-08-14-22-31-16.png" align="right" />
-
-###### Description
-Fetches full history of archives from the Wayback machine
-
-###### Use Cases
-This is useful for understanding the history of a site, and how it has changed over time. It can also be useful for finding old versions of a site, or for finding content that has been removed.
-
-###### Useful Links
-- [Wayback Machine](https://archive.org/web/)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/95ae58c99b953068d16904b6110a8e51517149f2e5f6cd4883a25d8c894c96e6/68747470733a2f2f692e6962622e636f2f6e4239737a54312f53637265656e73686f742d66726f6d2d323032332d30382d31342d32322d33312d31362e706e67"><img width="300" src="https://camo.githubusercontent.com/95ae58c99b953068d16904b6110a8e51517149f2e5f6cd4883a25d8c894c96e6/68747470733a2f2f692e6962622e636f2f6e4239737a54312f53637265656e73686f742d66726f6d2d323032332d30382d31342d32322d33312d31362e706e67" align="right" data-canonical-src="https://i.ibb.co/nB9szT1/Screenshot-from-2023-08-14-22-31-16.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-30" class="anchor" aria-label="Permalink: Description" href="#description-30"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Fetches full history of archives from the Wayback machine</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-30" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-30"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This is useful for understanding the history of a site, and how it has changed over time. It can also be useful for finding old versions of a site, or for finding content that has been removed.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-30" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-30"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://archive.org/web/" rel="nofollow">Wayback Machine</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Global Ranking</b></summary>
-
-<img width="300" src="https://i.ibb.co/nkbczgb/Screenshot-from-2023-08-14-22-02-40.png" align="right" />
-
-###### Description
-This check shows the global rank of the requested site. This is only accurate for websites which are in the top 100 million list. We're using data from the Tranco project (see below), which collates the top sites on the web from Umbrella, Majestic, Quantcast, the Chrome User Experience Report and Cloudflare Radar.
-
-###### Use Cases
-Knowing a websites overall global rank can be useful for understanding the scale of the site, and for comparing it to other sites. It can also be useful for understanding the relative popularity of a site, and for identifying potential trends.
-
-###### Useful Links
-- [Tranco List](https://tranco-list.eu/)
-- [Tranco Research Paper](https://tranco-list.eu/assets/tranco-ndss19.pdf)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/b4cf35a4d2858e509168c06a6f02d46edf0e0926297e81279e7340068c66cab2/68747470733a2f2f692e6962622e636f2f6e6b62637a67622f53637265656e73686f742d66726f6d2d323032332d30382d31342d32322d30322d34302e706e67"><img width="300" src="https://camo.githubusercontent.com/b4cf35a4d2858e509168c06a6f02d46edf0e0926297e81279e7340068c66cab2/68747470733a2f2f692e6962622e636f2f6e6b62637a67622f53637265656e73686f742d66726f6d2d323032332d30382d31342d32322d30322d34302e706e67" align="right" data-canonical-src="https://i.ibb.co/nkbczgb/Screenshot-from-2023-08-14-22-02-40.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-31" class="anchor" aria-label="Permalink: Description" href="#description-31"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This check shows the global rank of the requested site. This is only accurate for websites which are in the top 100 million list. We're using data from the Tranco project (see below), which collates the top sites on the web from Umbrella, Majestic, Quantcast, the Chrome User Experience Report and Cloudflare Radar.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-31" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-31"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Knowing a websites overall global rank can be useful for understanding the scale of the site, and for comparing it to other sites. It can also be useful for understanding the relative popularity of a site, and for identifying potential trends.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-31" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-31"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://tranco-list.eu/" rel="nofollow">Tranco List</a></li>
+<li><a href="https://tranco-list.eu/assets/tranco-ndss19.pdf" rel="nofollow">Tranco Research Paper</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Block Detection</b></summary>
-
-<img width="300" src="https://i.ibb.co/M5JSXbW/Screenshot-from-2023-08-26-12-12-43.png" align="right" />
-
-###### Description
-Checks access to the URL using 10+ of the most popular privacy, malware and parental control blocking DNS servers.
-
-###### Use Cases
-
-
-###### Useful Links
-- [ThreatJammer Lists](https://threatjammer.com/osint-lists)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/70830676932227d7d3715bdba789550f7c66ef1841e62a862de818de2995b64d/68747470733a2f2f692e6962622e636f2f4d354a535862572f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d31322d34332e706e67"><img width="300" src="https://camo.githubusercontent.com/70830676932227d7d3715bdba789550f7c66ef1841e62a862de818de2995b64d/68747470733a2f2f692e6962622e636f2f4d354a535862572f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d31322d34332e706e67" align="right" data-canonical-src="https://i.ibb.co/M5JSXbW/Screenshot-from-2023-08-26-12-12-43.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-32" class="anchor" aria-label="Permalink: Description" href="#description-32"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Checks access to the URL using 10+ of the most popular privacy, malware and parental control blocking DNS servers.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-32" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-32"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-32" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-32"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://threatjammer.com/osint-lists" rel="nofollow">ThreatJammer Lists</a></li>
+</ul>
 </details>
 <details>
-<summary><b>Malware & Phishing Detection</b></summary>
-
-<img width="300" src="https://i.ibb.co/hYgy621/Screenshot-from-2023-08-26-12-07-47.png" align="right" />
-
-###### Description
-Checks if a site appears in several common malware and phishing lists, to determine it's threat level.
-
-###### Use Cases
-Knowing if a site is listed as a threat by any of these services can be useful for understanding the reputation of a site, and for identifying potential trends.
-
-###### Useful Links
-- [URLHaus](https://urlhaus-api.abuse.ch/)
-- [PhishTank](https://www.phishtank.com/)
-
+<summary><b>Malware &amp; Phishing Detection</b></summary>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c47925da8eeba7d64a8c5887cd29431b21d394f59613075faacaf1172e3ad4e0/68747470733a2f2f692e6962622e636f2f685967793632312f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d30372d34372e706e67"><img width="300" src="https://camo.githubusercontent.com/c47925da8eeba7d64a8c5887cd29431b21d394f59613075faacaf1172e3ad4e0/68747470733a2f2f692e6962622e636f2f685967793632312f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d30372d34372e706e67" align="right" data-canonical-src="https://i.ibb.co/hYgy621/Screenshot-from-2023-08-26-12-07-47.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-33" class="anchor" aria-label="Permalink: Description" href="#description-33"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Checks if a site appears in several common malware and phishing lists, to determine it's threat level.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-33" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-33"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Knowing if a site is listed as a threat by any of these services can be useful for understanding the reputation of a site, and for identifying potential trends.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-33" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-33"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://urlhaus-api.abuse.ch/" rel="nofollow">URLHaus</a></li>
+<li><a href="https://www.phishtank.com/" rel="nofollow">PhishTank</a></li>
+</ul>
 </details>
 <details>
 <summary><b>TLS Cipher Suites</b></summary>
-
-<img width="300" src="https://i.ibb.co/6ydtH5R/Screenshot-from-2023-08-26-12-09-58.png" align="right" />
-
-###### Description
-These are combinations of cryptographic algorithms used by the server to establish a secure connection. It includes the key exchange algorithm, bulk encryption algorithm, MAC algorithm, and PRF (pseudorandom function).
-
-###### Use Cases
-This is important info to test for from a security perspective. Because a cipher suite is only as secure as the algorithms that it contains. If the version of encryption or authentication algorithm in a cipher suite have known vulnerabilities the cipher suite and TLS connection may then vulnerable to a downgrade or other attack
-
-###### Useful Links
-- [sslscan2 CLI](https://github.com/rbsec/sslscan)
-- [ssl-enum-ciphers (NPMAP script)](https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/081be7463c584260e873a33b3baedd578df8085db17c67ab1a14ff5050a9306f/68747470733a2f2f692e6962622e636f2f367964744835522f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d30392d35382e706e67"><img width="300" src="https://camo.githubusercontent.com/081be7463c584260e873a33b3baedd578df8085db17c67ab1a14ff5050a9306f/68747470733a2f2f692e6962622e636f2f367964744835522f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d30392d35382e706e67" align="right" data-canonical-src="https://i.ibb.co/6ydtH5R/Screenshot-from-2023-08-26-12-09-58.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-34" class="anchor" aria-label="Permalink: Description" href="#description-34"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">These are combinations of cryptographic algorithms used by the server to establish a secure connection. It includes the key exchange algorithm, bulk encryption algorithm, MAC algorithm, and PRF (pseudorandom function).</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-34" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-34"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This is important info to test for from a security perspective. Because a cipher suite is only as secure as the algorithms that it contains. If the version of encryption or authentication algorithm in a cipher suite have known vulnerabilities the cipher suite and TLS connection may then vulnerable to a downgrade or other attack</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-34" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-34"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://github.com/rbsec/sslscan">sslscan2 CLI</a></li>
+<li><a href="https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html" rel="nofollow">ssl-enum-ciphers (NPMAP script)</a></li>
+</ul>
 </details>
 <details>
 <summary><b>TLS Security Config</b></summary>
-
-<img width="300" src="https://i.ibb.co/FmksZJt/Screenshot-from-2023-08-26-12-12-09.png" align="right" />
-
-###### Description
-This uses guidelines from Mozilla's TLS Observatory to check the security of the TLS configuration. It checks for bad configurations, which may leave the site vulnerable to attack, as well as giving advice on how to fix. It will also give suggestions around outdated and modern TLS configs
-
-###### Use Cases
-Understanding issues with a site's TLS configuration will help you address potential vulnerabilities, and ensure the site is using the latest and most secure TLS configuration.
-
-###### Useful Links
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/1d86ae367934c1acfed29a3f5e481afcca1fae154fb0d27b652022b7e8400141/68747470733a2f2f692e6962622e636f2f466d6b735a4a742f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d31322d30392e706e67"><img width="300" src="https://camo.githubusercontent.com/1d86ae367934c1acfed29a3f5e481afcca1fae154fb0d27b652022b7e8400141/68747470733a2f2f692e6962622e636f2f466d6b735a4a742f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d31322d30392e706e67" align="right" data-canonical-src="https://i.ibb.co/FmksZJt/Screenshot-from-2023-08-26-12-12-09.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-35" class="anchor" aria-label="Permalink: Description" href="#description-35"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This uses guidelines from Mozilla's TLS Observatory to check the security of the TLS configuration. It checks for bad configurations, which may leave the site vulnerable to attack, as well as giving advice on how to fix. It will also give suggestions around outdated and modern TLS configs</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-35" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-35"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Understanding issues with a site's TLS configuration will help you address potential vulnerabilities, and ensure the site is using the latest and most secure TLS configuration.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-35" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-35"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 </details>
 <details>
 <summary><b>TLS Handshake Simulation</b></summary>
-
-<img width="300" src="https://i.ibb.co/F7qRZkh/Screenshot-from-2023-08-26-12-11-28.png" align="right" />
-
-###### Description
-This simulates how different clients (browsers, operating systems) would perform a TLS handshake with the server. It helps identify compatibility issues and insecure configurations.
-
-###### Use Cases
-
-
-###### Useful Links
-- [TLS Handshakes (via Cloudflare Learning)](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
-- [SSL Test (via SSL Labs)](https://www.ssllabs.com/ssltest/)
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/4cf1acd29e4cdb4172318ed49276cc80878f149ae57b74b8411e2fcc33230148/68747470733a2f2f692e6962622e636f2f463771525a6b682f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d31312d32382e706e67"><img width="300" src="https://camo.githubusercontent.com/4cf1acd29e4cdb4172318ed49276cc80878f149ae57b74b8411e2fcc33230148/68747470733a2f2f692e6962622e636f2f463771525a6b682f53637265656e73686f742d66726f6d2d323032332d30382d32362d31322d31312d32382e706e67" align="right" data-canonical-src="https://i.ibb.co/F7qRZkh/Screenshot-from-2023-08-26-12-11-28.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-36" class="anchor" aria-label="Permalink: Description" href="#description-36"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This simulates how different clients (browsers, operating systems) would perform a TLS handshake with the server. It helps identify compatibility issues and insecure configurations.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-36" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-36"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Useful Links</h6><a id="user-content-useful-links-36" class="anchor" aria-label="Permalink: Useful Links" href="#useful-links-36"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/" rel="nofollow">TLS Handshakes (via Cloudflare Learning)</a></li>
+<li><a href="https://www.ssllabs.com/ssltest/" rel="nofollow">SSL Test (via SSL Labs)</a></li>
+</ul>
 </details>
 <details>
 <summary><b>Screenshot</b></summary>
-
-<img width="300" src="https://i.ibb.co/2F0x8kP/Screenshot-from-2023-07-29-18-34-48.png" align="right" />
-
-###### Description
-This check takes a screenshot of webpage that the requested URL / IP resolves to, and displays it.
-
-###### Use Cases
-This may be useful to see what a given website looks like, free of the constraints of your browser, IP, or location.
-
-
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/71d5da3732a2b60e12482b2ec97ad800f3dc2a1152a2b5bec4faebe98d44a509/68747470733a2f2f692e6962622e636f2f32463078386b502f53637265656e73686f742d66726f6d2d323032332d30372d32392d31382d33342d34382e706e67"><img width="300" src="https://camo.githubusercontent.com/71d5da3732a2b60e12482b2ec97ad800f3dc2a1152a2b5bec4faebe98d44a509/68747470733a2f2f692e6962622e636f2f32463078386b502f53637265656e73686f742d66726f6d2d323032332d30372d32392d31382d33342d34382e706e67" align="right" data-canonical-src="https://i.ibb.co/2F0x8kP/Screenshot-from-2023-07-29-18-34-48.png" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Description</h6><a id="user-content-description-37" class="anchor" aria-label="Permalink: Description" href="#description-37"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This check takes a screenshot of webpage that the requested URL / IP resolves to, and displays it.</p>
+<div class="markdown-heading" dir="auto"><h6 tabindex="-1" class="heading-element" dir="auto">Use Cases</h6><a id="user-content-use-cases-37" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases-37"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This may be useful to see what a given website looks like, free of the constraints of your browser, IP, or location.</p>
 </details>
-
 </details>
-
-Read more here: **[web-check.xyz/about](https://web-check.xyz/about)**
-
----
-
-## Usage
-
-### Deployment
-
-### Deploying - Option #1: Netlify
-
-Click the button below, to deploy to Netlify 👇
-
-[![Deploy to Netlify](https://img.shields.io/badge/Deploy-Netlify-%2330c8c9?style=for-the-badge&logo=netlify&labelColor=1e0e41 'Deploy Web-Check to Netlify, via 1-Click Script')](https://app.netlify.com/start/deploy?repository=https://github.com/lissy93/web-check)
-
-### Deploying - Option #2: Vercel
-
-Click the button below, to deploy to Vercel 👇
-
-[![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-%23ffffff?style=for-the-badge&logo=vercel&labelColor=1e0e41)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flissy93%2Fweb-check&project-name=web-check&repository-name=web-check-fork&demo-title=Web-Check%20Demo&demo-description=Check%20out%20web-check.xyz%20to%20see%20a%20live%20demo%20of%20this%20application%20running.&demo-url=https%3A%2F%2Fweb-check.xyz&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2FLissy93%2Fweb-check%2Fmaster%2F.github%2Fscreenshots%2Fweb-check-screenshot10.png)
-
-### Deploying - Option #3: Docker
-
-Run `docker run -p 3000:3000 lissy93/web-check`, then open [`localhost:3000`](http://localhost:3000)
-
+<p dir="auto">Read more here: <strong><a href="https://web-check.xyz/about" rel="nofollow">web-check.xyz/about</a></strong></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Usage</h2><a id="user-content-usage" class="anchor" aria-label="永久链接：用法" href="#usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Deployment</h3><a id="user-content-deployment" class="anchor" aria-label="永久链接：部署" href="#deployment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Deploying - Option #1: Netlify</h3><a id="user-content-deploying---option-1-netlify" class="anchor" aria-label="永久链接：部署 - 选项 #1：Netlify" href="#deploying---option-1-netlify"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Click the button below, to deploy to Netlify 👇</p>
+<p dir="auto"><a href="https://app.netlify.com/start/deploy?repository=https://github.com/lissy93/web-check" rel="nofollow"><img src="https://camo.githubusercontent.com/ddcafad65a8f15377efd79600f10c1648196930423af354812bcf43fef3b469a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4465706c6f792d4e65746c6966792d2532333330633863393f7374796c653d666f722d7468652d6261646765266c6f676f3d6e65746c696679266c6162656c436f6c6f723d316530653431" alt="部署到 Netlify" title="通过一键式脚本将 Web-Check 部署到 Netlify" data-canonical-src="https://img.shields.io/badge/Deploy-Netlify-%2330c8c9?style=for-the-badge&amp;logo=netlify&amp;labelColor=1e0e41" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Deploying - Option #2: Vercel</h3><a id="user-content-deploying---option-2-vercel" class="anchor" aria-label="永久链接：部署 - 选项 #2：Vercel" href="#deploying---option-2-vercel"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Click the button below, to deploy to Vercel 👇</p>
+<p dir="auto"><a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flissy93%2Fweb-check&amp;project-name=web-check&amp;repository-name=web-check-fork&amp;demo-title=Web-Check%20Demo&amp;demo-description=Check%20out%20web-check.xyz%20to%20see%20a%20live%20demo%20of%20this%20application%20running.&amp;demo-url=https%3A%2F%2Fweb-check.xyz&amp;demo-image=https%3A%2F%2Fraw.githubusercontent.com%2FLissy93%2Fweb-check%2Fmaster%2F.github%2Fscreenshots%2Fweb-check-screenshot10.png" rel="nofollow"><img src="https://camo.githubusercontent.com/ed6bc0e12942085debded6dbe27e4653687361f5478801b5c86a965a06edff45/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4465706c6f792d56657263656c2d2532336666666666663f7374796c653d666f722d7468652d6261646765266c6f676f3d76657263656c266c6162656c436f6c6f723d316530653431" alt="使用 Vercel 进行部署" data-canonical-src="https://img.shields.io/badge/Deploy-Vercel-%23ffffff?style=for-the-badge&amp;logo=vercel&amp;labelColor=1e0e41" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Deploying - Option #3: Docker</h3><a id="user-content-deploying---option-3-docker" class="anchor" aria-label="永久链接：部署 - 选项#3：Docker" href="#deploying---option-3-docker"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Run <code>docker run -p 3000:3000 lissy93/web-check</code>, then open <a href="http://localhost:3000" rel="nofollow"><code>localhost:3000</code></a></p>
 <details>
 <summary>Docker Options</summary>
-
-You can get the Docker image from:
-- DockerHub: [`lissy93/web-check`](https://hub.docker.com/r/lissy93/web-check)
-- GHCR: [`ghcr.io/lissy93/web-check`](https://github.com/Lissy93/web-check/pkgs/container/web-check)
-- Or build the image yourself by cloning the repo and running `docker build -t web-check .`
-
+<p dir="auto">You can get the Docker image from:</p>
+<ul dir="auto">
+<li>DockerHub: <a href="https://hub.docker.com/r/lissy93/web-check" rel="nofollow"><code>lissy93/web-check</code></a></li>
+<li>GHCR: <a href="https://github.com/Lissy93/web-check/pkgs/container/web-check"><code>ghcr.io/lissy93/web-check</code></a></li>
+<li>Or build the image yourself by cloning the repo and running <code>docker build -t web-check .</code></li>
+</ul>
 </details>
-
-### Deploying - Option #4: From Source
-
-Install the prerequisites listed in the [Developing](#developing) section, then run: 
-
-```bash
-git clone https://github.com/Lissy93/web-check.git  # Download the code from GitHub
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Deploying - Option #4: From Source</h3><a id="user-content-deploying---option-4-from-source" class="anchor" aria-label="永久链接：部署 - 选项 #4：来自源代码" href="#deploying---option-4-from-source"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Install the prerequisites listed in the <a href="#developing">Developing</a> section, then run:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>git clone https://github.com/Lissy93/web-check.git  <span class="pl-c"><span class="pl-c">#</span> Download the code from GitHub</span>
+<span class="pl-c1">cd</span> web-check                                        <span class="pl-c"><span class="pl-c">#</span> Navigate into the project dir</span>
+yarn install                                        <span class="pl-c"><span class="pl-c">#</span> Install the NPM dependencies</span>
+yarn build                                          <span class="pl-c"><span class="pl-c">#</span> Build the app for production</span>
+yarn serve                                          <span class="pl-c"><span class="pl-c">#</span> Start the app (API and GUI)</span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git clone https://github.com/Lissy93/web-check.git  # Download the code from GitHub
 cd web-check                                        # Navigate into the project dir
 yarn install                                        # Install the NPM dependencies
 yarn build                                          # Build the app for production
-yarn serve                                          # Start the app (API and GUI)
-```
-
----
-
-### Configuring
-
-By default, no configuration is needed.
-
-But there are some optional environmental variables that you can set to give you access to some additional checks, or to increase rate-limits for some checks that use external APIs.
-
-**API Keys & Credentials**:
-
-Key | Value
----|---
-`GOOGLE_CLOUD_API_KEY` | A Google API key ([get here](https://cloud.google.com/api-gateway/docs/authenticate-api-keys)). This can be used to return quality metrics for a site
-`REACT_APP_SHODAN_API_KEY` | A Shodan API key ([get here](https://account.shodan.io/)). This will show associated host names for a given domain
-`REACT_APP_WHO_API_KEY` | A WhoAPI key ([get here](https://whoapi.com/)). This will show more comprehensive WhoIs records than the default job
-
-<details>
-  <summary><small>Full / Upcoming Vals</small></summary>
-  
-- `GOOGLE_CLOUD_API_KEY` - A Google API key ([get here](https://cloud.google.com/api-gateway/docs/authenticate-api-keys)). This can be used to return quality metrics for a site
-- `REACT_APP_SHODAN_API_KEY` - A Shodan API key ([get here](https://account.shodan.io/)). This will show associated host names for a given domain
-- `REACT_APP_WHO_API_KEY` - A WhoAPI key ([get here](https://whoapi.com/)). This will show more comprehensive WhoIs records than the default job
-- `SECURITY_TRAILS_API_KEY` - A Security Trails API key ([get here](https://securitytrails.com/corp/api)). This will show org info associated with the IP
-- `CLOUDMERSIVE_API_KEY` - API key for Cloudmersive ([get here](https://account.cloudmersive.com/)). This will show known threats associated with the IP
-- `TRANCO_USERNAME` - A Tranco email ([get here](https://tranco-list.eu/)). This will show the rank of a site, based on traffic
-- `TRANCO_API_KEY` - A Tranco API key ([get here](https://tranco-list.eu/)). This will show the rank of a site, based on traffic
-- `URL_SCAN_API_KEY` - A URLScan API key ([get here](https://urlscan.io/)). This will fetch miscalanious info about a site
-- `BUILT_WITH_API_KEY` - A BuiltWith API key ([get here](https://api.builtwith.com/)). This will show the main features of a site
-- `TORRENT_IP_API_KEY` - A torrent API key ([get here](https://iknowwhatyoudownload.com/en/api/)). This will show torrents downloaded by an IP
-  
-</details>
-
-**Configuration Settings**:
-
-Key | Value
----|---
-`CHROME_PATH` | The path the Chromium executable (e.g. `/usr/bin/chromium`)
-`PORT` | Port to serve the API, when running server.js (e.g. `3000`)
-`DISABLE_GUI` | Disable the GUI, and only serve the API (e.g. `false`)
-`API_TIMEOUT_LIMIT` | The timeout limit for API requests, in milliseconds (e.g. `10000`)
-`REACT_APP_API_ENDPOINT` | The endpoint for the API, either local or remote (e.g. `/api`)
-
-All values are optional.
-
-You can add these as environmental variables. Either put them directly into an `.env` file in the projects root, or via the Netlify / Vercel UI, or by passing to the Docker container with the --env flag, or using your own environmental variable management system
-
-Note that keys that are prefixed with `REACT_APP_` are used client-side, and as such they must be scoped correctly with minimum privileges, since may be made visible when intercepting browser <-> server network requests
-
----
-
-### Developing
-
-1. Clone the repo, `git clone git@github.com:Lissy93/web-check.git`
-2. Cd into it, `cd web-check`
-3. Install dependencies: `yarn`
-4. Start the dev server, with `yarn dev`
-
-You'll need [Node.js](https://nodejs.org/en) (V 18.16.1 or later) installed, plus [yarn](https://yarnpkg.com/getting-started/install) as well as [git](https://git-scm.com/).
-Some checks also require `chromium`, `traceroute` and `dns` to be installed within your environment. These jobs will just be skipped if those packages aren't present.
-
-
----
-
-## Community
-
-### Contributing
-
-Contributions of any kind are very welcome, and would be much appreciated.
-For Code of Conduct, see [Contributor Convent](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
-
-To get started, fork the repo, make your changes, add, commit and push the code, then come back here to open a pull request. If you're new to GitHub or open source, [this guide](https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3#let-s-make-our-first-pull-request-) or the [git docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) may help you get started, but feel free to reach out if you need any support.
-
-[![Submit a PR](https://img.shields.io/badge/Submit_a_PR-GitHub-%23060606?style=for-the-badge&logo=github&logoColor=fff)](https://github.com/Lissy93/web-check/compare)
-
-
-### Reporting Bugs
-
-If you've found something that doesn't work as it should, or would like to suggest a new feature, then go ahead and raise a ticket on GitHub.
-For bugs, please outline the steps needed to reproduce, and include relevant info like system info and resulting logs.
-
-[![Raise an Issue](https://img.shields.io/badge/Raise_an_Issue-GitHub-%23060606?style=for-the-badge&logo=github&logoColor=fff)](https://github.com/Lissy93/web-check/issues/new/choose)
-
-### Supporting
-
-The app will remain 100% free and open source.
-But due to the amount of traffic that the hosted instance gets, the lambda function usage is costing about $25/month.
-Any help with covering the costs via GitHub Sponsorship would be much appreciated.
-It's thanks to the support of the community that this project is able to be freely available for everyone :)
-
-[![Sponsor Lissy93 on GitHub](https://img.shields.io/badge/Sponsor_on_GitHub-Lissy93-%23ff4dda?style=for-the-badge&logo=githubsponsors&logoColor=ff4dda)](https://github.com/sponsors/Lissy93)
-
-
-### Contributors
-
-Credit to the following users for contributing to Web-Check
-
-<!-- readme: contributors -start -->
+yarn serve                                          # Start the app (API and GUI)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<hr>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Configuring</h3><a id="user-content-configuring" class="anchor" aria-label="永久链接：配置" href="#configuring"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">By default, no configuration is needed.</p>
+<p dir="auto">But there are some optional environmental variables that you can set to give you access to some additional checks, or to increase rate-limits for some checks that use external APIs.</p>
+<p dir="auto"><strong>API Keys &amp; Credentials</strong>:</p>
 <table>
+<thead>
 <tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GOOGLE_CLOUD_API_KEY</code></td>
+<td>A Google API key (<a href="https://cloud.google.com/api-gateway/docs/authenticate-api-keys" rel="nofollow">get here</a>). This can be used to return quality metrics for a site</td>
+</tr>
+<tr>
+<td><code>REACT_APP_SHODAN_API_KEY</code></td>
+<td>A Shodan API key (<a href="https://account.shodan.io/" rel="nofollow">get here</a>). This will show associated host names for a given domain</td>
+</tr>
+<tr>
+<td><code>REACT_APP_WHO_API_KEY</code></td>
+<td>A WhoAPI key (<a href="https://whoapi.com/" rel="nofollow">get here</a>). This will show more comprehensive WhoIs records than the default job</td>
+</tr>
+</tbody>
+</table>
+<details>
+  <summary>Full / Upcoming Vals</summary>
+<ul dir="auto">
+<li><code>GOOGLE_CLOUD_API_KEY</code> - A Google API key (<a href="https://cloud.google.com/api-gateway/docs/authenticate-api-keys" rel="nofollow">get here</a>). This can be used to return quality metrics for a site</li>
+<li><code>REACT_APP_SHODAN_API_KEY</code> - A Shodan API key (<a href="https://account.shodan.io/" rel="nofollow">get here</a>). This will show associated host names for a given domain</li>
+<li><code>REACT_APP_WHO_API_KEY</code> - A WhoAPI key (<a href="https://whoapi.com/" rel="nofollow">get here</a>). This will show more comprehensive WhoIs records than the default job</li>
+<li><code>SECURITY_TRAILS_API_KEY</code> - A Security Trails API key (<a href="https://securitytrails.com/corp/api" rel="nofollow">get here</a>). This will show org info associated with the IP</li>
+<li><code>CLOUDMERSIVE_API_KEY</code> - API key for Cloudmersive (<a href="https://account.cloudmersive.com/" rel="nofollow">get here</a>). This will show known threats associated with the IP</li>
+<li><code>TRANCO_USERNAME</code> - A Tranco email (<a href="https://tranco-list.eu/" rel="nofollow">get here</a>). This will show the rank of a site, based on traffic</li>
+<li><code>TRANCO_API_KEY</code> - A Tranco API key (<a href="https://tranco-list.eu/" rel="nofollow">get here</a>). This will show the rank of a site, based on traffic</li>
+<li><code>URL_SCAN_API_KEY</code> - A URLScan API key (<a href="https://urlscan.io/" rel="nofollow">get here</a>). This will fetch miscalanious info about a site</li>
+<li><code>BUILT_WITH_API_KEY</code> - A BuiltWith API key (<a href="https://api.builtwith.com/" rel="nofollow">get here</a>). This will show the main features of a site</li>
+<li><code>TORRENT_IP_API_KEY</code> - A torrent API key (<a href="https://iknowwhatyoudownload.com/en/api/" rel="nofollow">get here</a>). This will show torrents downloaded by an IP</li>
+</ul>
+</details>
+<p dir="auto"><strong>Configuration Settings</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CHROME_PATH</code></td>
+<td>The path the Chromium executable (e.g. <code>/usr/bin/chromium</code>)</td>
+</tr>
+<tr>
+<td><code>PORT</code></td>
+<td>Port to serve the API, when running server.js (e.g. <code>3000</code>)</td>
+</tr>
+<tr>
+<td><code>DISABLE_GUI</code></td>
+<td>Disable the GUI, and only serve the API (e.g. <code>false</code>)</td>
+</tr>
+<tr>
+<td><code>API_TIMEOUT_LIMIT</code></td>
+<td>The timeout limit for API requests, in milliseconds (e.g. <code>10000</code>)</td>
+</tr>
+<tr>
+<td><code>REACT_APP_API_ENDPOINT</code></td>
+<td>The endpoint for the API, either local or remote (e.g. <code>/api</code>)</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">All values are optional.</p>
+<p dir="auto">You can add these as environmental variables. Either put them directly into an <code>.env</code> file in the projects root, or via the Netlify / Vercel UI, or by passing to the Docker container with the --env flag, or using your own environmental variable management system</p>
+<p dir="auto">Note that keys that are prefixed with <code>REACT_APP_</code> are used client-side, and as such they must be scoped correctly with minimum privileges, since may be made visible when intercepting browser &lt;-&gt; server network requests</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Developing</h3><a id="user-content-developing" class="anchor" aria-label="永久链接： 发展中" href="#developing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li>Clone the repo, <code>git clone git@github.com:Lissy93/web-check.git</code></li>
+<li>Cd into it, <code>cd web-check</code></li>
+<li>Install dependencies: <code>yarn</code></li>
+<li>Start the dev server, with <code>yarn dev</code></li>
+</ol>
+<p dir="auto">You'll need <a href="https://nodejs.org/en" rel="nofollow">Node.js</a> (V 18.16.1 or later) installed, plus <a href="https://yarnpkg.com/getting-started/install" rel="nofollow">yarn</a> as well as <a href="https://git-scm.com/" rel="nofollow">git</a>.
+Some checks also require <code>chromium</code>, <code>traceroute</code> and <code>dns</code> to be installed within your environment. These jobs will just be skipped if those packages aren't present.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Community</h2><a id="user-content-community" class="anchor" aria-label="永久链接：社区" href="#community"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Contributing</h3><a id="user-content-contributing" class="anchor" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Contributions of any kind are very welcome, and would be much appreciated.
+For Code of Conduct, see <a href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/" rel="nofollow">Contributor Convent</a>.</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首先，分叉存储库，进行更改，添加、提交和推送代码，然后返回此处打开拉取请求。</font><font style="vertical-align: inherit;">如果您是 GitHub 或开源的新手，</font></font><a href="https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3#let-s-make-our-first-pull-request-" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">git 文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可能会帮助您入门，但如果您需要任何支持，请随时与我们联系。</font></font></p>
+<p dir="auto"><a href="https://github.com/Lissy93/web-check/compare"><img src="https://camo.githubusercontent.com/e2b588e73ba4f295d17a482b7f63f89b2c733c1ab4527024b600b7ad5942431d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5375626d69745f615f50522d4769744875622d2532333036303630363f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d666666" alt="提交 PR" data-canonical-src="https://img.shields.io/badge/Submit_a_PR-GitHub-%23060606?style=for-the-badge&amp;logo=github&amp;logoColor=fff" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">报告错误</font></font></h3><a id="user-content-reporting-bugs" class="anchor" aria-label="永久链接：报告错误" href="#reporting-bugs"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您发现某些功能无法正常工作，或者想要建议新功能，请继续在 GitHub 上提出请求。</font><font style="vertical-align: inherit;">对于错误，请概述重现所需的步骤，并包含相关信息，例如系统信息和生成的日志。</font></font></p>
+<p dir="auto"><a href="https://github.com/Lissy93/web-check/issues/new/choose"><img src="https://camo.githubusercontent.com/6877394290eb44a81dff12907e91c89d83c1a28be441dd30c1927dddc6598e4e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52616973655f616e5f49737375652d4769744875622d2532333036303630363f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d666666" alt="提出问题" data-canonical-src="https://img.shields.io/badge/Raise_an_Issue-GitHub-%23060606?style=for-the-badge&amp;logo=github&amp;logoColor=fff" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">配套</font></font></h3><a id="user-content-supporting" class="anchor" aria-label="永久链接：支持" href="#supporting"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该应用程序将保持 100% 免费和开源。</font><font style="vertical-align: inherit;">但由于托管实例获得的流量较大，lambda 函数的使用成本约为每月 25 美元。</font><font style="vertical-align: inherit;">任何通过 GitHub 赞助来支付费用的帮助将不胜感激。</font><font style="vertical-align: inherit;">感谢社区的支持，这个项目才能够免费提供给所有人:)</font></font></p>
+<p dir="auto"><a href="https://github.com/sponsors/Lissy93"><img src="https://camo.githubusercontent.com/ac8ceb2468d862d525b2eb63b656fc673195592601501150be922691bacae6ca/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53706f6e736f725f6f6e5f4769744875622d4c6973737939332d2532336666346464613f7374796c653d666f722d7468652d6261646765266c6f676f3d67697468756273706f6e736f7273266c6f676f436f6c6f723d666634646461" alt="在 GitHub 上赞助 Lissy93" data-canonical-src="https://img.shields.io/badge/Sponsor_on_GitHub-Lissy93-%23ff4dda?style=for-the-badge&amp;logo=githubsponsors&amp;logoColor=ff4dda" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献者</font></font></h3><a id="user-content-contributors" class="anchor" aria-label="永久链接：贡献者" href="#contributors"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">感谢以下用户对 Web-Check 的贡献</font></font></p>
+
+<table>
+<tbody><tr>
     <td align="center">
         <a href="https://github.com/Lissy93">
-            <img src="https://avatars.githubusercontent.com/u/1862727?v=4" width="80;" alt="Lissy93"/>
-            <br />
-            <sub><b>Alicia Sykes</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/1862727?v=4" width="80;" alt="莉西93" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">艾丽西娅·赛克斯</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/liss-bot">
-            <img src="https://avatars.githubusercontent.com/u/87835202?v=4" width="80;" alt="liss-bot"/>
-            <br />
-            <sub><b>Alicia Bot</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/87835202?v=4" width="80;" alt="利斯机器人" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">艾丽西亚·博特</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/muni106">
-            <img src="https://avatars.githubusercontent.com/u/65845442?v=4" width="80;" alt="muni106"/>
-            <br />
-            <sub><b>Mounir Samite</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/65845442?v=4" width="80;" alt="市政106" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">穆尼尔·萨米特</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/brianteeman">
-            <img src="https://avatars.githubusercontent.com/u/1296369?v=4" width="80;" alt="brianteeman"/>
-            <br />
-            <sub><b>Brian Teeman</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/1296369?v=4" width="80;" alt="布莱恩蒂曼" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">布赖恩·蒂曼</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/jinnabaalu">
-            <img src="https://avatars.githubusercontent.com/u/11784253?v=4" width="80;" alt="jinnabaalu"/>
-            <br />
-            <sub><b>Jinna Baalu</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/11784253?v=4" width="80;" alt="金纳巴鲁" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">金娜·巴鲁</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/0xflotus">
-            <img src="https://avatars.githubusercontent.com/u/26602940?v=4" width="80;" alt="0xflotus"/>
-            <br />
-            <sub><b>0xflotus</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/26602940?v=4" width="80;" alt="0x舰队" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0x舰队</font></font></b></sub>
         </a>
     </td></tr>
 <tr>
     <td align="center">
         <a href="https://github.com/eltociear">
-            <img src="https://avatars.githubusercontent.com/u/22633385?v=4" width="80;" alt="eltociear"/>
-            <br />
-            <sub><b>Ikko Eltociear Ashimine</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/22633385?v=4" width="80;" alt="埃尔托恰尔" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">芦峰一光</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/treatmesubj">
-            <img src="https://avatars.githubusercontent.com/u/39680353?v=4" width="80;" alt="treatmesubj"/>
-            <br />
-            <sub><b>John Hupperts</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/39680353?v=4" width="80;" alt="治疗主题" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">约翰于佩茨</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/t3chn0m4g3">
-            <img src="https://avatars.githubusercontent.com/u/4318452?v=4" width="80;" alt="t3chn0m4g3"/>
-            <br />
-            <sub><b>Marco Ochse</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/4318452?v=4" width="80;" alt="t3chn0m4g3" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">马可·奥赫斯</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/murrple-1">
-            <img src="https://avatars.githubusercontent.com/u/5559656?v=4" width="80;" alt="murrple-1"/>
-            <br />
-            <sub><b>Murray Christopherson</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/5559656?v=4" width="80;" alt="murrple-1" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">默里·克里斯托弗森</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/PhiRequiem">
-            <img src="https://avatars.githubusercontent.com/u/1323576?v=4" width="80;" alt="PhiRequiem"/>
-            <br />
-            <sub><b>PhiRequiem</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/1323576?v=4" width="80;" alt="菲安魂曲" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">菲安魂曲</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/UlisesGascon">
-            <img src="https://avatars.githubusercontent.com/u/5110813?v=4" width="80;" alt="UlisesGascon"/>
-            <br />
-            <sub><b>Ulises Gascón</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/5110813?v=4" width="80;" alt="尤里塞斯·加斯科" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">尤利西斯·加斯科恩</font></font></b></sub>
         </a>
     </td></tr>
 <tr>
     <td align="center">
         <a href="https://github.com/abhishekMuge">
-            <img src="https://avatars.githubusercontent.com/u/49590582?v=4" width="80;" alt="abhishekMuge"/>
-            <br />
-            <sub><b>Abhishek Muge</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/49590582?v=4" width="80;" alt="阿披舍木格" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">阿布舍克·穆格</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/robinson">
-            <img src="https://avatars.githubusercontent.com/u/237874?v=4" width="80;" alt="robinson"/>
-            <br />
-            <sub><b>Lth</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/237874?v=4" width="80;" alt="罗宾逊" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">长径</font></font></b></sub>
         </a>
     </td></tr>
-</table>
-<!-- readme: contributors -end -->
+</tbody></table>
 
-### Sponsors
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">赞助商</font></font></h3><a id="user-content-sponsors" class="anchor" aria-label="永久链接：赞助商" href="#sponsors"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">非常感谢这些优秀的人，他们在 GitHub 上赞助了我，他们的支持帮助支付了让 Web-Check 和我的其他项目向所有人免费开放所需的费用。</font><font style="vertical-align: inherit;">如果可以的话</font><font style="vertical-align: inherit;">，考虑加入他们，</font></font><a href="https://github.com/sponsors/Lissy93"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 GitHub 上赞助我。</font></font></a><font style="vertical-align: inherit;"></font></p>
 
-Huge thanks to these wonderful people, who sponsor me on GitHub, their support helps cover the costs required to keep Web-Check and my other projects free for everyone. Consider joining them, by [sponsoring me on GitHub](https://github.com/sponsors/Lissy93) if you're able.
-
-<!-- readme: sponsors -start -->
 <table>
-<tr>
+<tbody><tr>
     <td align="center">
         <a href="https://github.com/koconder">
-            <img src="https://avatars.githubusercontent.com/u/25068?u=582657b23622aaa3dfe68bd028a780f272f456fa&v=4" width="80;" alt="koconder"/>
-            <br />
-            <sub><b>Vincent Koc</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/25068?u=582657b23622aaa3dfe68bd028a780f272f456fa&amp;v=4" width="80;" alt="共同康德" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文森特·科克</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/peng1can">
-            <img src="https://avatars.githubusercontent.com/u/225854?v=4" width="80;" alt="peng1can"/>
-            <br />
-            <sub><b>Peng1can</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/225854?v=4" width="80;" alt="鹏1灿" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">鹏一灿</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/alydemah">
-            <img src="https://avatars.githubusercontent.com/u/652035?u=ac2c04e474da37bfeafcfa25076cc1800997aedb&v=4" width="80;" alt="alydemah"/>
-            <br />
-            <sub><b>Aly Mohamed</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/652035?u=ac2c04e474da37bfeafcfa25076cc1800997aedb&amp;v=4" width="80;" alt="阿莱德玛" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">阿里·穆罕默德</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/bgadrian">
-            <img src="https://avatars.githubusercontent.com/u/830001?v=4" width="80;" alt="bgadrian"/>
-            <br />
-            <sub><b>B.G.Adrian</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/830001?v=4" width="80;" alt="布加德里安" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BG阿德里安</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/tbjers">
-            <img src="https://avatars.githubusercontent.com/u/1117052?u=539d96d5e581b3139c75713ce35b89a36626404c&v=4" width="80;" alt="tbjers"/>
-            <br />
-            <sub><b>Torgny Bjers</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/1117052?u=539d96d5e581b3139c75713ce35b89a36626404c&amp;v=4" width="80;" alt="tjer" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">托尼·比耶斯</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/emlazzarin">
-            <img src="https://avatars.githubusercontent.com/u/1141361?u=714e3487a3f2e0df721b01a0133945f075d3ff68&v=4" width="80;" alt="emlazzarin"/>
-            <br />
-            <sub><b>Eddy Lazzarin</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/1141361?u=714e3487a3f2e0df721b01a0133945f075d3ff68&amp;v=4" width="80;" alt="恩拉扎林" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">艾迪·拉扎林</font></font></b></sub>
         </a>
     </td></tr>
 <tr>
     <td align="center">
         <a href="https://github.com/AnandChowdhary">
-            <img src="https://avatars.githubusercontent.com/u/2841780?u=747e554b3a7f12eb20b7910e1c87d817844f714f&v=4" width="80;" alt="AnandChowdhary"/>
-            <br />
-            <sub><b>Anand Chowdhary</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/2841780?u=747e554b3a7f12eb20b7910e1c87d817844f714f&amp;v=4" width="80;" alt="阿南德·乔杜里" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">阿南德·乔杜里</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/shrippen">
-            <img src="https://avatars.githubusercontent.com/u/2873570?v=4" width="80;" alt="shrippen"/>
-            <br />
-            <sub><b>Shrippen</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/2873570?v=4" width="80;" alt="发货" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虾皮</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/bile0026">
-            <img src="https://avatars.githubusercontent.com/u/5022496?u=aec96ad173c0ea9baaba93807efa8a848af6595c&v=4" width="80;" alt="bile0026"/>
-            <br />
-            <sub><b>Zach Biles</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/5022496?u=aec96ad173c0ea9baaba93807efa8a848af6595c&amp;v=4" width="80;" alt="文件0026" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">扎克拜尔斯</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/UlisesGascon">
-            <img src="https://avatars.githubusercontent.com/u/5110813?u=3c41facd8aa26154b9451de237c34b0f78d672a5&v=4" width="80;" alt="UlisesGascon"/>
-            <br />
-            <sub><b>Ulises Gascón</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/5110813?u=3c41facd8aa26154b9451de237c34b0f78d672a5&amp;v=4" width="80;" alt="尤里塞斯·加斯科" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">尤利西斯·加斯科恩</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/digitalarche">
-            <img src="https://avatars.githubusercontent.com/u/6546135?u=d033c9c16e8367987aec3f9ff5922bc67dd1eedf&v=4" width="80;" alt="digitalarche"/>
-            <br />
-            <sub><b>Digital Archeology</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/6546135?u=d033c9c16e8367987aec3f9ff5922bc67dd1eedf&amp;v=4" width="80;" alt="数字原型" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数字考古学</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/InDieTasten">
-            <img src="https://avatars.githubusercontent.com/u/7047377?v=4" width="80;" alt="InDieTasten"/>
-            <br />
-            <sub><b>InDieTasten</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/7047377?v=4" width="80;" alt="美食品味" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">美食品味</font></font></b></sub>
         </a>
     </td></tr>
 <tr>
     <td align="center">
         <a href="https://github.com/bmcgonag">
-            <img src="https://avatars.githubusercontent.com/u/7346620?u=2a0f9284f3e12ac1cc15288c254d1ec68a5081e8&v=4" width="80;" alt="bmcgonag"/>
-            <br />
-            <sub><b>Brian McGonagill</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/7346620?u=2a0f9284f3e12ac1cc15288c254d1ec68a5081e8&amp;v=4" width="80;" alt="麦格纳格" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">布莱恩·麦格纳吉尔</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/vlad-timofeev">
-            <img src="https://avatars.githubusercontent.com/u/11474041?u=eee43705b54d2ec9f51fc4fcce5ad18dd17c87e4&v=4" width="80;" alt="vlad-timofeev"/>
-            <br />
-            <sub><b>Vlad Timofeev</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/11474041?u=eee43705b54d2ec9f51fc4fcce5ad18dd17c87e4&amp;v=4" width="80;" alt="弗拉德·季莫费耶夫" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">弗拉德·季莫费耶夫</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/helixzz">
-            <img src="https://avatars.githubusercontent.com/u/12218889?u=d06d0c103dfbdb99450623064f7da3c5a3675fb6&v=4" width="80;" alt="helixzz"/>
-            <br />
-            <sub><b>HeliXZz</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/12218889?u=d06d0c103dfbdb99450623064f7da3c5a3675fb6&amp;v=4" width="80;" alt="螺旋" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">直升机XZz</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/forwardemail">
-            <img src="https://avatars.githubusercontent.com/u/32481436?v=4" width="80;" alt="forwardemail"/>
-            <br />
-            <sub><b>Forward Email - Open-source & Privacy-focused Email Service (2023)</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/32481436?v=4" width="80;" alt="转发邮件" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">转发电子邮件 - 开源且注重隐私的电子邮件服务 (2023)</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/Bastii717">
-            <img src="https://avatars.githubusercontent.com/u/53431819?u=604977bed6ad6875ada890d0d3765a4cacc2fa14&v=4" width="80;" alt="Bastii717"/>
-            <br />
-            <sub><b>Bastii717</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/53431819?u=604977bed6ad6875ada890d0d3765a4cacc2fa14&amp;v=4" width="80;" alt="巴斯蒂717" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">巴斯蒂717</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/frankdez93">
-            <img src="https://avatars.githubusercontent.com/u/87549420?v=4" width="80;" alt="frankdez93"/>
-            <br />
-            <sub><b>Frankdez93</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/87549420?v=4" width="80;" alt="弗兰克德兹93" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">弗兰克德兹93</font></font></b></sub>
         </a>
     </td></tr>
 <tr>
     <td align="center">
         <a href="https://github.com/ratty222">
-            <img src="https://avatars.githubusercontent.com/u/92832598?u=137b65530cbd5f5af9c24cde51baa6cc77cc934b&v=4" width="80;" alt="ratty222"/>
-            <br />
-            <sub><b>Brent</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/92832598?u=137b65530cbd5f5af9c24cde51baa6cc77cc934b&amp;v=4" width="80;" alt="拉蒂222" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">布伦特</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/hernanpopper">
-            <img src="https://avatars.githubusercontent.com/u/104868017?v=4" width="80;" alt="hernanpopper"/>
-            <br />
-            <sub><b>Hernanpopper</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/104868017?v=4" width="80;" alt="埃尔南波普尔" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">埃尔南波普尔</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/NixyJuppie">
-            <img src="https://avatars.githubusercontent.com/u/138570196?u=b102c222487905728b858704962d32759df29ebe&v=4" width="80;" alt="NixyJuppie"/>
-            <br />
-            <sub><b>Nixy</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/138570196?u=b102c222487905728b858704962d32759df29ebe&amp;v=4" width="80;" alt="尼克斯·朱皮" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">尼克斯</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/nrvo">
-            <img src="https://avatars.githubusercontent.com/u/151435968?u=e1dcb307fd0efdc45cddbe9490a7b956e4da6835&v=4" width="80;" alt="nrvo"/>
-            <br />
-            <sub><b>Nrvo</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/151435968?u=e1dcb307fd0efdc45cddbe9490a7b956e4da6835&amp;v=4" width="80;" alt="紧张的" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">紧张的</font></font></b></sub>
         </a>
     </td>
     <td align="center">
         <a href="https://github.com/mezza93">
-            <img src="https://avatars.githubusercontent.com/u/153599966?v=4" width="80;" alt="mezza93"/>
-            <br />
-            <sub><b>mezza93</b></sub>
+            <img src="https://avatars.githubusercontent.com/u/153599966?v=4" width="80;" alt="梅扎93" style="max-width: 100%;">
+            <br>
+            <sub><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">梅扎93</font></font></b></sub>
         </a>
     </td></tr>
-</table>
-<!-- readme: sponsors -end -->
+</tbody></table>
 
----
-
-## License
-
-> _**[Lissy93/Web-Check](https://github.com/Lissy93/web-check)** is licensed under [MIT](https://github.com/Lissy93/web-check/blob/HEAD/LICENSE) © [Alicia Sykes](https://aliciasykes.com) 2023._<br>
-> <sup align="right">For information, see <a href="https://tldrlegal.com/license/mit-license">TLDR Legal > MIT</a></sup>
-
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2><a id="user-content-license" class="anchor" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<blockquote>
+<p dir="auto"><em><strong><a href="https://github.com/Lissy93/web-check"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lissy93/Web-Check</font></font></a></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">已获得</font></font><a href="https://github.com/Lissy93/web-check/blob/HEAD/LICENSE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MIT</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ©</font></font><a href="https://aliciasykes.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Alicia Sykes</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 2023</font></font></em><br>
+<sup align="right"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。有关信息，请参阅</font></font><a href="https://tldrlegal.com/license/mit-license" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TLDR Legal &gt; MIT</font></font></a></sup></p>
+</blockquote>
 <details>
-<summary>Expand License</summary>
-
-```
-The MIT License (MIT)
-Copyright (c) Alicia Sykes <alicia@omg.com> 
+<summary><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">扩展许可证</font></font></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>The MIT License (MIT)
+Copyright (c) Alicia Sykes &lt;alicia@omg.com&gt; 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal 
@@ -1193,32 +1044,43 @@ PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRI
 HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="The MIT License (MIT)
+Copyright (c) Alicia Sykes <alicia@omg.com> 
 
-[![View Dependency Licenses & SBOM on FOSSA](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLissy93%2Fweb-check.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FLissy93%2Fweb-check?ref=badge_large&issueType=license)
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the &quot;Software&quot;), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sub-license, and/or sell 
+copies of the Software, and to permit persons to whom the Software is furnished 
+to do so, subject to the following conditions:
 
+The above copyright notice and this permission notice shall be included install 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANT ABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><a href="https://app.fossa.com/projects/git%2Bgithub.com%2FLissy93%2Fweb-check?ref=badge_large&amp;issueType=license" rel="nofollow"><img src="https://camo.githubusercontent.com/84b3f2588664584be9eba85a969a6960e8a549bfd785d06b12e4967601343d4d/68747470733a2f2f6170702e666f7373612e636f6d2f6170692f70726f6a656374732f6769742532426769746875622e636f6d2532464c6973737939332532467765622d636865636b2e7376673f747970653d6c61726765266973737565547970653d6c6963656e7365" alt="View Dependency Licenses &amp; SBOM on FOSSA" data-canonical-src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FLissy93%2Fweb-check.svg?type=large&amp;issueType=license" style="max-width: 100%;"></a></p>
 </details>
 
-
-<!-- License + Copyright -->
-<p  align="center">
-  <i>© <a href="https://aliciasykes.com">Alicia Sykes</a> 2023</i><br>
-  <i>Licensed under <a href="https://gist.github.com/Lissy93/143d2ee01ccc5c052a17">MIT</a></i><br>
-  <a href="https://github.com/lissy93"><img src="https://i.ibb.co/4KtpYxb/octocat-clean-mini.png" /></a><br>
-  <sup>Thanks for visiting :)</sup>
+<p align="center" dir="auto">
+  <i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© </font></font><a href="https://aliciasykes.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Alicia Sykes</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 2023</font></font></i><br>
+  <i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">已获得</font></font><a href="https://gist.github.com/Lissy93/143d2ee01ccc5c052a17"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MIT</font></font></a></i><font style="vertical-align: inherit;"><sup><font style="vertical-align: inherit;">许可感谢您的访问:)</font></sup></font><br>
+  <a href="https://github.com/lissy93"><img src="https://camo.githubusercontent.com/a6899250b93a255fe4610322ef776725c2603446d2a15f7acf61068c60b79b4d/68747470733a2f2f692e6962622e636f2f344b74705978622f6f63746f6361742d636c65616e2d6d696e692e706e67" data-canonical-src="https://i.ibb.co/4KtpYxb/octocat-clean-mini.png" style="max-width: 100%;"></a><br>
+  <sup><font style="vertical-align: inherit;"></font></sup>
 </p>
 
-<!-- Dinosaurs are Awesome -->
-<!-- 
-                        . - ~ ~ ~ - .
-      ..     _      .-~               ~-.
-     //|     \ `..~                      `.
-    || |      }  }              /       \  \
-(\   \\ \~^..'                 |         }  \
- \`.-~  o      /       }       |        /    \
- (__          |       /        |       /      `.
-  `- - ~ ~ -._|      /_ - ~ ~ ^|      /- _      `.
-              |     /          |     /     ~-.     ~- _
-              |_____|          |_____|         ~ - . _ _~_-_
--->
 
+</article></div>
